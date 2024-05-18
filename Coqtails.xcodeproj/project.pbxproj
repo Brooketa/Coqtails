@@ -14,6 +14,11 @@
 		70DB835E2BF8CDF50032BBB8 /* CoqtailsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DB835D2BF8CDF50032BBB8 /* CoqtailsTests.swift */; };
 		70DB83682BF8CDF50032BBB8 /* CoqtailsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DB83672BF8CDF50032BBB8 /* CoqtailsUITests.swift */; };
 		70DB836A2BF8CDF50032BBB8 /* CoqtailsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DB83692BF8CDF50032BBB8 /* CoqtailsUITestsLaunchTests.swift */; };
+		70DB83782BF8D2530032BBB8 /* BaseClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DB83772BF8D2530032BBB8 /* BaseClientProtocol.swift */; };
+		70DB837A2BF8D2660032BBB8 /* BaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DB83792BF8D2660032BBB8 /* BaseClient.swift */; };
+		70DB837D2BF8D2960032BBB8 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DB837C2BF8D2960032BBB8 /* APIError.swift */; };
+		70DB837F2BF8D2A90032BBB8 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DB837E2BF8D2A90032BBB8 /* HTTPMethod.swift */; };
+		70DB83812BF8D2C30032BBB8 /* JSONDecoder+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DB83802BF8D2C30032BBB8 /* JSONDecoder+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +49,11 @@
 		70DB83632BF8CDF50032BBB8 /* CoqtailsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoqtailsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		70DB83672BF8CDF50032BBB8 /* CoqtailsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoqtailsUITests.swift; sourceTree = "<group>"; };
 		70DB83692BF8CDF50032BBB8 /* CoqtailsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoqtailsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		70DB83772BF8D2530032BBB8 /* BaseClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseClientProtocol.swift; sourceTree = "<group>"; };
+		70DB83792BF8D2660032BBB8 /* BaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseClient.swift; sourceTree = "<group>"; };
+		70DB837C2BF8D2960032BBB8 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		70DB837E2BF8D2A90032BBB8 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		70DB83802BF8D2C30032BBB8 /* JSONDecoder+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +104,8 @@
 		70DB834B2BF8CDF30032BBB8 /* Coqtails */ = {
 			isa = PBXGroup;
 			children = (
+				70DB83832BF8E3160032BBB8 /* Core */,
+				70DB83762BF8D2470032BBB8 /* Networking */,
 				70DB834C2BF8CDF30032BBB8 /* CoqtailsApp.swift */,
 				70DB834E2BF8CDF30032BBB8 /* ContentView.swift */,
 				70DB83502BF8CDF50032BBB8 /* Assets.xcassets */,
@@ -125,6 +137,41 @@
 				70DB83692BF8CDF50032BBB8 /* CoqtailsUITestsLaunchTests.swift */,
 			);
 			path = CoqtailsUITests;
+			sourceTree = "<group>";
+		};
+		70DB83762BF8D2470032BBB8 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				70DB837B2BF8D2850032BBB8 /* BaseClient */,
+				70DB837C2BF8D2960032BBB8 /* APIError.swift */,
+				70DB837E2BF8D2A90032BBB8 /* HTTPMethod.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		70DB837B2BF8D2850032BBB8 /* BaseClient */ = {
+			isa = PBXGroup;
+			children = (
+				70DB83772BF8D2530032BBB8 /* BaseClientProtocol.swift */,
+				70DB83792BF8D2660032BBB8 /* BaseClient.swift */,
+			);
+			path = BaseClient;
+			sourceTree = "<group>";
+		};
+		70DB83822BF8D2C70032BBB8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				70DB83802BF8D2C30032BBB8 /* JSONDecoder+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		70DB83832BF8E3160032BBB8 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				70DB83822BF8D2C70032BBB8 /* Extensions */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +305,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				70DB834F2BF8CDF30032BBB8 /* ContentView.swift in Sources */,
+				70DB83812BF8D2C30032BBB8 /* JSONDecoder+Extensions.swift in Sources */,
+				70DB837A2BF8D2660032BBB8 /* BaseClient.swift in Sources */,
+				70DB837F2BF8D2A90032BBB8 /* HTTPMethod.swift in Sources */,
+				70DB83782BF8D2530032BBB8 /* BaseClientProtocol.swift in Sources */,
+				70DB837D2BF8D2960032BBB8 /* APIError.swift in Sources */,
 				70DB834D2BF8CDF30032BBB8 /* CoqtailsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
