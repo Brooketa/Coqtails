@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		70DB834D2BF8CDF30032BBB8 /* CoqtailsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DB834C2BF8CDF30032BBB8 /* CoqtailsApp.swift */; };
+		70DB834F2BF8CDF30032BBB8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DB834E2BF8CDF30032BBB8 /* ContentView.swift */; };
+		70DB83512BF8CDF50032BBB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70DB83502BF8CDF50032BBB8 /* Assets.xcassets */; };
+		70DB83542BF8CDF50032BBB8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70DB83532BF8CDF50032BBB8 /* Preview Assets.xcassets */; };
+		70DB835E2BF8CDF50032BBB8 /* CoqtailsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DB835D2BF8CDF50032BBB8 /* CoqtailsTests.swift */; };
+		70DB83682BF8CDF50032BBB8 /* CoqtailsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DB83672BF8CDF50032BBB8 /* CoqtailsUITests.swift */; };
+		70DB836A2BF8CDF50032BBB8 /* CoqtailsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DB83692BF8CDF50032BBB8 /* CoqtailsUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		70DB835A2BF8CDF50032BBB8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 70DB83412BF8CDF30032BBB8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 70DB83482BF8CDF30032BBB8;
+			remoteInfo = Coqtails;
+		};
+		70DB83642BF8CDF50032BBB8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 70DB83412BF8CDF30032BBB8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 70DB83482BF8CDF30032BBB8;
+			remoteInfo = Coqtails;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		70DB83492BF8CDF30032BBB8 /* Coqtails.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coqtails.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		70DB834C2BF8CDF30032BBB8 /* CoqtailsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoqtailsApp.swift; sourceTree = "<group>"; };
+		70DB834E2BF8CDF30032BBB8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		70DB83502BF8CDF50032BBB8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		70DB83532BF8CDF50032BBB8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		70DB83592BF8CDF50032BBB8 /* CoqtailsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoqtailsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		70DB835D2BF8CDF50032BBB8 /* CoqtailsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoqtailsTests.swift; sourceTree = "<group>"; };
+		70DB83632BF8CDF50032BBB8 /* CoqtailsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoqtailsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		70DB83672BF8CDF50032BBB8 /* CoqtailsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoqtailsUITests.swift; sourceTree = "<group>"; };
+		70DB83692BF8CDF50032BBB8 /* CoqtailsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoqtailsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		70DB83462BF8CDF30032BBB8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70DB83562BF8CDF50032BBB8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70DB83602BF8CDF50032BBB8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		70DB83402BF8CDF30032BBB8 = {
+			isa = PBXGroup;
+			children = (
+				70DB834B2BF8CDF30032BBB8 /* Coqtails */,
+				70DB835C2BF8CDF50032BBB8 /* CoqtailsTests */,
+				70DB83662BF8CDF50032BBB8 /* CoqtailsUITests */,
+				70DB834A2BF8CDF30032BBB8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		70DB834A2BF8CDF30032BBB8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				70DB83492BF8CDF30032BBB8 /* Coqtails.app */,
+				70DB83592BF8CDF50032BBB8 /* CoqtailsTests.xctest */,
+				70DB83632BF8CDF50032BBB8 /* CoqtailsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		70DB834B2BF8CDF30032BBB8 /* Coqtails */ = {
+			isa = PBXGroup;
+			children = (
+				70DB834C2BF8CDF30032BBB8 /* CoqtailsApp.swift */,
+				70DB834E2BF8CDF30032BBB8 /* ContentView.swift */,
+				70DB83502BF8CDF50032BBB8 /* Assets.xcassets */,
+				70DB83522BF8CDF50032BBB8 /* Preview Content */,
+			);
+			path = Coqtails;
+			sourceTree = "<group>";
+		};
+		70DB83522BF8CDF50032BBB8 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				70DB83532BF8CDF50032BBB8 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		70DB835C2BF8CDF50032BBB8 /* CoqtailsTests */ = {
+			isa = PBXGroup;
+			children = (
+				70DB835D2BF8CDF50032BBB8 /* CoqtailsTests.swift */,
+			);
+			path = CoqtailsTests;
+			sourceTree = "<group>";
+		};
+		70DB83662BF8CDF50032BBB8 /* CoqtailsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				70DB83672BF8CDF50032BBB8 /* CoqtailsUITests.swift */,
+				70DB83692BF8CDF50032BBB8 /* CoqtailsUITestsLaunchTests.swift */,
+			);
+			path = CoqtailsUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		70DB83482BF8CDF30032BBB8 /* Coqtails */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70DB836D2BF8CDF50032BBB8 /* Build configuration list for PBXNativeTarget "Coqtails" */;
+			buildPhases = (
+				70DB83452BF8CDF30032BBB8 /* Sources */,
+				70DB83462BF8CDF30032BBB8 /* Frameworks */,
+				70DB83472BF8CDF30032BBB8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Coqtails;
+			productName = Coqtails;
+			productReference = 70DB83492BF8CDF30032BBB8 /* Coqtails.app */;
+			productType = "com.apple.product-type.application";
+		};
+		70DB83582BF8CDF50032BBB8 /* CoqtailsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70DB83702BF8CDF50032BBB8 /* Build configuration list for PBXNativeTarget "CoqtailsTests" */;
+			buildPhases = (
+				70DB83552BF8CDF50032BBB8 /* Sources */,
+				70DB83562BF8CDF50032BBB8 /* Frameworks */,
+				70DB83572BF8CDF50032BBB8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				70DB835B2BF8CDF50032BBB8 /* PBXTargetDependency */,
+			);
+			name = CoqtailsTests;
+			productName = CoqtailsTests;
+			productReference = 70DB83592BF8CDF50032BBB8 /* CoqtailsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		70DB83622BF8CDF50032BBB8 /* CoqtailsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70DB83732BF8CDF50032BBB8 /* Build configuration list for PBXNativeTarget "CoqtailsUITests" */;
+			buildPhases = (
+				70DB835F2BF8CDF50032BBB8 /* Sources */,
+				70DB83602BF8CDF50032BBB8 /* Frameworks */,
+				70DB83612BF8CDF50032BBB8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				70DB83652BF8CDF50032BBB8 /* PBXTargetDependency */,
+			);
+			name = CoqtailsUITests;
+			productName = CoqtailsUITests;
+			productReference = 70DB83632BF8CDF50032BBB8 /* CoqtailsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		70DB83412BF8CDF30032BBB8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					70DB83482BF8CDF30032BBB8 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					70DB83582BF8CDF50032BBB8 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 70DB83482BF8CDF30032BBB8;
+					};
+					70DB83622BF8CDF50032BBB8 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 70DB83482BF8CDF30032BBB8;
+					};
+				};
+			};
+			buildConfigurationList = 70DB83442BF8CDF30032BBB8 /* Build configuration list for PBXProject "Coqtails" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 70DB83402BF8CDF30032BBB8;
+			productRefGroup = 70DB834A2BF8CDF30032BBB8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				70DB83482BF8CDF30032BBB8 /* Coqtails */,
+				70DB83582BF8CDF50032BBB8 /* CoqtailsTests */,
+				70DB83622BF8CDF50032BBB8 /* CoqtailsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		70DB83472BF8CDF30032BBB8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70DB83542BF8CDF50032BBB8 /* Preview Assets.xcassets in Resources */,
+				70DB83512BF8CDF50032BBB8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70DB83572BF8CDF50032BBB8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70DB83612BF8CDF50032BBB8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		70DB83452BF8CDF30032BBB8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70DB834F2BF8CDF30032BBB8 /* ContentView.swift in Sources */,
+				70DB834D2BF8CDF30032BBB8 /* CoqtailsApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70DB83552BF8CDF50032BBB8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70DB835E2BF8CDF50032BBB8 /* CoqtailsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70DB835F2BF8CDF50032BBB8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70DB836A2BF8CDF50032BBB8 /* CoqtailsUITestsLaunchTests.swift in Sources */,
+				70DB83682BF8CDF50032BBB8 /* CoqtailsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		70DB835B2BF8CDF50032BBB8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 70DB83482BF8CDF30032BBB8 /* Coqtails */;
+			targetProxy = 70DB835A2BF8CDF50032BBB8 /* PBXContainerItemProxy */;
+		};
+		70DB83652BF8CDF50032BBB8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 70DB83482BF8CDF30032BBB8 /* Coqtails */;
+			targetProxy = 70DB83642BF8CDF50032BBB8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		70DB836B2BF8CDF50032BBB8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		70DB836C2BF8CDF50032BBB8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		70DB836E2BF8CDF50032BBB8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Coqtails/Preview Content\"";
+				DEVELOPMENT_TEAM = GD838ZZ7H8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thorssons.Coqtails;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		70DB836F2BF8CDF50032BBB8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Coqtails/Preview Content\"";
+				DEVELOPMENT_TEAM = GD838ZZ7H8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thorssons.Coqtails;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		70DB83712BF8CDF50032BBB8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GD838ZZ7H8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thorssons.CoqtailsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Coqtails.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Coqtails";
+			};
+			name = Debug;
+		};
+		70DB83722BF8CDF50032BBB8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GD838ZZ7H8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thorssons.CoqtailsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Coqtails.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Coqtails";
+			};
+			name = Release;
+		};
+		70DB83742BF8CDF50032BBB8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GD838ZZ7H8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thorssons.CoqtailsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Coqtails;
+			};
+			name = Debug;
+		};
+		70DB83752BF8CDF50032BBB8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GD838ZZ7H8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thorssons.CoqtailsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Coqtails;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		70DB83442BF8CDF30032BBB8 /* Build configuration list for PBXProject "Coqtails" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70DB836B2BF8CDF50032BBB8 /* Debug */,
+				70DB836C2BF8CDF50032BBB8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		70DB836D2BF8CDF50032BBB8 /* Build configuration list for PBXNativeTarget "Coqtails" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70DB836E2BF8CDF50032BBB8 /* Debug */,
+				70DB836F2BF8CDF50032BBB8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		70DB83702BF8CDF50032BBB8 /* Build configuration list for PBXNativeTarget "CoqtailsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70DB83712BF8CDF50032BBB8 /* Debug */,
+				70DB83722BF8CDF50032BBB8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		70DB83732BF8CDF50032BBB8 /* Build configuration list for PBXNativeTarget "CoqtailsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70DB83742BF8CDF50032BBB8 /* Debug */,
+				70DB83752BF8CDF50032BBB8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 70DB83412BF8CDF30032BBB8 /* Project object */;
+}
