@@ -74,14 +74,6 @@ class FiltersViewModel: ObservableObject, Loadable {
                 self.searchButtonIsEnabled = hasSelectedFilters
             }
             .store(in: &cancellables)
-
-        $selectedFilters
-            .map { !$0.isEmpty }
-            .receive(on: DispatchQueue.main)
-            .sink { [unowned self] isSearchButtonEnabled in
-                self.searchButtonIsEnabled = isSearchButtonEnabled
-            }
-            .store(in: &cancellables)
     }
 
 }
