@@ -22,6 +22,16 @@
 		70DB83872BF8E3EF0032BBB8 /* AsyncContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DB83862BF8E3EF0032BBB8 /* AsyncContentView.swift */; };
 		70DB83892BF8E4030032BBB8 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DB83882BF8E4030032BBB8 /* Loadable.swift */; };
 		70DB838C2BF8E41B0032BBB8 /* ErrorPopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DB838B2BF8E41B0032BBB8 /* ErrorPopoverView.swift */; };
+		70DB839D2BF8F76A0032BBB8 /* SearchClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DB839C2BF8F76A0032BBB8 /* SearchClientProtocol.swift */; };
+		70DB839F2BF8F7760032BBB8 /* SearchClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DB839E2BF8F7760032BBB8 /* SearchClient.swift */; };
+		70DB83A12BF8F7840032BBB8 /* SearchEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DB83A02BF8F7840032BBB8 /* SearchEndpoints.swift */; };
+		70DB83A42BF8F7E70032BBB8 /* SearchCocktailResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DB83A32BF8F7E70032BBB8 /* SearchCocktailResponseModel.swift */; };
+		70DB83A62BF8F7F80032BBB8 /* SearchCocktailClientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DB83A52BF8F7F80032BBB8 /* SearchCocktailClientModel.swift */; };
+		70DB83A82BF8F81A0032BBB8 /* SearchUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DB83A72BF8F81A0032BBB8 /* SearchUseCaseProtocol.swift */; };
+		70DB83AA2BF8F82B0032BBB8 /* SearchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DB83A92BF8F82B0032BBB8 /* SearchUseCase.swift */; };
+		70DB83AD2BF8F84E0032BBB8 /* SearchCoctailUseCaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DB83AC2BF8F84E0032BBB8 /* SearchCoctailUseCaseModel.swift */; };
+		70DB83B02BF8F87B0032BBB8 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DB83AF2BF8F87B0032BBB8 /* SearchViewModel.swift */; };
+		70DB83B32BF8F8A30032BBB8 /* SearchCocktailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DB83B22BF8F8A30032BBB8 /* SearchCocktailModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +70,16 @@
 		70DB83862BF8E3EF0032BBB8 /* AsyncContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncContentView.swift; sourceTree = "<group>"; };
 		70DB83882BF8E4030032BBB8 /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
 		70DB838B2BF8E41B0032BBB8 /* ErrorPopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorPopoverView.swift; sourceTree = "<group>"; };
+		70DB839C2BF8F76A0032BBB8 /* SearchClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchClientProtocol.swift; sourceTree = "<group>"; };
+		70DB839E2BF8F7760032BBB8 /* SearchClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchClient.swift; sourceTree = "<group>"; };
+		70DB83A02BF8F7840032BBB8 /* SearchEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEndpoints.swift; sourceTree = "<group>"; };
+		70DB83A32BF8F7E70032BBB8 /* SearchCocktailResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCocktailResponseModel.swift; sourceTree = "<group>"; };
+		70DB83A52BF8F7F80032BBB8 /* SearchCocktailClientModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCocktailClientModel.swift; sourceTree = "<group>"; };
+		70DB83A72BF8F81A0032BBB8 /* SearchUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUseCaseProtocol.swift; sourceTree = "<group>"; };
+		70DB83A92BF8F82B0032BBB8 /* SearchUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUseCase.swift; sourceTree = "<group>"; };
+		70DB83AC2BF8F84E0032BBB8 /* SearchCoctailUseCaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoctailUseCaseModel.swift; sourceTree = "<group>"; };
+		70DB83AF2BF8F87B0032BBB8 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		70DB83B22BF8F8A30032BBB8 /* SearchCocktailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCocktailModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +133,7 @@
 				70DB83832BF8E3160032BBB8 /* Core */,
 				70DB83842BF8E3D10032BBB8 /* CoreUI */,
 				70DB83762BF8D2470032BBB8 /* Networking */,
+				70DB83972BF8F7290032BBB8 /* Search */,
 				70DB834C2BF8CDF30032BBB8 /* CoqtailsApp.swift */,
 				70DB834E2BF8CDF30032BBB8 /* ContentView.swift */,
 				70DB83502BF8CDF50032BBB8 /* Assets.xcassets */,
@@ -205,6 +226,71 @@
 				70DB838B2BF8E41B0032BBB8 /* ErrorPopoverView.swift */,
 			);
 			path = ErrorPopoverView;
+			sourceTree = "<group>";
+		};
+		70DB83972BF8F7290032BBB8 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				70DB83982BF8F7330032BBB8 /* Clients */,
+				70DB83992BF8F73B0032BBB8 /* UseCases */,
+				70DB83AE2BF8F8600032BBB8 /* UI */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		70DB83982BF8F7330032BBB8 /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				70DB83A22BF8F7C20032BBB8 /* Models */,
+				70DB839C2BF8F76A0032BBB8 /* SearchClientProtocol.swift */,
+				70DB839E2BF8F7760032BBB8 /* SearchClient.swift */,
+				70DB83A02BF8F7840032BBB8 /* SearchEndpoints.swift */,
+			);
+			path = Clients;
+			sourceTree = "<group>";
+		};
+		70DB83992BF8F73B0032BBB8 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				70DB83AB2BF8F8440032BBB8 /* Models */,
+				70DB83A72BF8F81A0032BBB8 /* SearchUseCaseProtocol.swift */,
+				70DB83A92BF8F82B0032BBB8 /* SearchUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		70DB83A22BF8F7C20032BBB8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				70DB83A32BF8F7E70032BBB8 /* SearchCocktailResponseModel.swift */,
+				70DB83A52BF8F7F80032BBB8 /* SearchCocktailClientModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		70DB83AB2BF8F8440032BBB8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				70DB83AC2BF8F84E0032BBB8 /* SearchCoctailUseCaseModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		70DB83AE2BF8F8600032BBB8 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				70DB83B12BF8F8940032BBB8 /* Models */,
+				70DB83AF2BF8F87B0032BBB8 /* SearchViewModel.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		70DB83B12BF8F8940032BBB8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				70DB83B22BF8F8A30032BBB8 /* SearchCocktailModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,11 +424,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				70DB834F2BF8CDF30032BBB8 /* ContentView.swift in Sources */,
+				70DB83A62BF8F7F80032BBB8 /* SearchCocktailClientModel.swift in Sources */,
 				70DB83812BF8D2C30032BBB8 /* JSONDecoder+Extensions.swift in Sources */,
+				70DB839F2BF8F7760032BBB8 /* SearchClient.swift in Sources */,
 				70DB83892BF8E4030032BBB8 /* Loadable.swift in Sources */,
+				70DB83B02BF8F87B0032BBB8 /* SearchViewModel.swift in Sources */,
 				70DB838C2BF8E41B0032BBB8 /* ErrorPopoverView.swift in Sources */,
+				70DB83A12BF8F7840032BBB8 /* SearchEndpoints.swift in Sources */,
+				70DB83A82BF8F81A0032BBB8 /* SearchUseCaseProtocol.swift in Sources */,
+				70DB83B32BF8F8A30032BBB8 /* SearchCocktailModel.swift in Sources */,
+				70DB839D2BF8F76A0032BBB8 /* SearchClientProtocol.swift in Sources */,
 				70DB837A2BF8D2660032BBB8 /* BaseClient.swift in Sources */,
+				70DB83A42BF8F7E70032BBB8 /* SearchCocktailResponseModel.swift in Sources */,
+				70DB83AD2BF8F84E0032BBB8 /* SearchCoctailUseCaseModel.swift in Sources */,
 				70DB837F2BF8D2A90032BBB8 /* HTTPMethod.swift in Sources */,
+				70DB83AA2BF8F82B0032BBB8 /* SearchUseCase.swift in Sources */,
 				70DB83782BF8D2530032BBB8 /* BaseClientProtocol.swift in Sources */,
 				70DB83872BF8E3EF0032BBB8 /* AsyncContentView.swift in Sources */,
 				70DB837D2BF8D2960032BBB8 /* APIError.swift in Sources */,
