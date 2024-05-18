@@ -57,6 +57,9 @@ struct SearchBarView: View {
         .onAppear {
             isFocused = shouldBeFocused
         }
+        .onTapGesture {
+            isFocused = true
+        }
     }
 
 }
