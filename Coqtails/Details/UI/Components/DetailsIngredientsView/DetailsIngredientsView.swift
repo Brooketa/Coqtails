@@ -6,7 +6,7 @@ struct DetailsIngredientsView: View {
 
     var body: some View {
         VStack {
-            Text("Ingredients:")
+            Text("Ingredients: ")
                 .font(.system(size: 16))
                 .fontWeight(.semibold)
                 .foregroundStyle(.black)

@@ -42,6 +42,7 @@ struct DetailsView: View {
                         .font(.system(size: 17))
                         .fontWeight(.semibold)
                         .foregroundStyle(.white)
+
                 }
 
                 ScrollView {
@@ -60,8 +61,6 @@ struct DetailsView: View {
                                 glassType: cocktail.glassType,
                                 alcoholicType: cocktail.drinkType
                             )
-                            .padding(.top, 20)
-                            .padding(.horizontal, 20)
 
                             Divider()
 
