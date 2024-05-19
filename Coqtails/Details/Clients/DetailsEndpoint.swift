@@ -1,7 +1,6 @@
 enum DetailsEndpoint {
 
     case lookup(String)
-
     case random
 
     var path: String {

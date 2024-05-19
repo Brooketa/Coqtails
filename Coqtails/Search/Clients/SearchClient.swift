@@ -7,10 +7,12 @@ class SearchClient: SearchClientProtocol {
     }
 
     func searchCoctails(query: String) async throws -> [SearchCocktailClientModel] {
+        let endpoint = SearchEndpoint.search(query)
+
         let response: SearchCocktailResponseModel = try await baseClient.execute(
-            path: SearchEndpoints.searchPath,
+            path: endpoint.path,
             method: .get,
-            parameters: ["s": query])
+            parameters: endpoint.parameters)
 
         return response.drinks ?? []
     }
