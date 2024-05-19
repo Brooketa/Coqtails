@@ -48,7 +48,12 @@ struct SearchView: View {
                 }
             }
             .navigationDestination(for: SearchNavigationDestination.self) { destination in
-                //TODO: Add navigation to other screens
+                switch destination {
+                case .details(let cocktailID):
+                    Text(cocktailID ?? "")
+                case .filters:
+                    FiltersView()
+                }
             }
         }
     }
