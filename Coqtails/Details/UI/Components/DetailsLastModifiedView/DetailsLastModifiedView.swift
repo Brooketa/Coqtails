@@ -15,6 +15,8 @@ struct DetailsLastModifiedView: View {
             Text("\(lastModified.description)")
                 .font(.system(size: 16))
         }
+        .padding(.horizontal, 20)
+        .padding(.bottom, 20)
     }
 
 }

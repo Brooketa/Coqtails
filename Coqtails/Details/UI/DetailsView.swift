@@ -66,23 +66,16 @@ struct DetailsView: View {
                             Divider()
 
                             DetailsIngredientsView(ingredients: cocktail.ingredients)
-                                .padding(.horizontal, 20)
 
                             Divider()
                                 .padding(.horizontal, 20)
 
                             DetailsDirectionsView(directions: cocktail.instructions ?? "")
-                                .padding(.horizontal, 20)
-                                .frame(height: 100)
-                                .frame(maxHeight: .infinity)
-
 
                             Divider()
                                 .padding(.horizontal, 20)
 
                             DetailsLastModifiedView(lastModified: cocktail.lastModified)
-                                .padding(.horizontal, 20)
-                                .padding(.bottom, 20)
 
                         }
                         .background {
@@ -90,7 +83,6 @@ struct DetailsView: View {
                         }
                         .clipShape(RoundedRectangle(cornerRadius: 40))
                         .padding(.top, scrollViewSize.width * 0.75)
-                        .frame(maxHeight: .infinity)
                     }
                 }
                 .scrollIndicators(.hidden)

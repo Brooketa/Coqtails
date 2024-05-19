@@ -19,7 +19,7 @@ struct DetailsDirectionsView: View {
                 .padding(.vertical, 8)
                 .frame(maxWidth: .infinity ,alignment: .leading)
         }
-        .frame(maxHeight: .infinity)
+        .padding(.horizontal, 20)
     }
 
 }

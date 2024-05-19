@@ -26,6 +26,7 @@ struct DetailsIngredientsView: View {
                 }
             }
         }
+        .padding(.horizontal, 20)
     }
 
 }
