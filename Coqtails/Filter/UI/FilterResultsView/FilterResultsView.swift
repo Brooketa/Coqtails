@@ -52,6 +52,7 @@ struct FilterResultsView: View {
                 }
             }
         }
+        .background(Color.primaryBackground)
         .navigationBarBackButtonHidden()
         .task {
             guard case .idle = viewModel.state  else { return }
