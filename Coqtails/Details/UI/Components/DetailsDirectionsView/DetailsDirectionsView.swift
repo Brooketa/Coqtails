@@ -1,10 +1,3 @@
-//
-//  DetailsDirectionsView.swift
-//  Coqtails
-//
-//  Created by Bruno Krolo on 19.05.2024..
-//
-
 import SwiftUI
 
 struct DetailsDirectionsView: View {
@@ -26,4 +19,5 @@ struct DetailsDirectionsView: View {
                 .padding(.vertical, 8)
         }
     }
+
 }

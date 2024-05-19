@@ -46,11 +46,15 @@ struct DetailsView: View {
 
                 ScrollView {
 
-                    VStack {
+                    ZStack {
 
-                        KFImage(cocktail.thumbnailURL)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
+                        VStack {
+                            KFImage(cocktail.thumbnailURL)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+
+                            Spacer()
+                        }
 
                         VStack(alignment: .leading, spacing: 20) {
                             DetailsCategoriesView(
@@ -59,6 +63,7 @@ struct DetailsView: View {
                                 alcoholicType: cocktail.drinkType
                             )
                             .padding(.top, 20)
+                            .padding(.horizontal, 20)
 
                             Divider()
 
@@ -76,13 +81,14 @@ struct DetailsView: View {
 
                             DetailsLastModifiedView(lastModified: cocktail.lastModified)
                                 .padding(.horizontal, 20)
+                                .padding(.bottom, 20)
 
                         }
                         .background {
                             Color(.primaryBackground)
                         }
                         .clipShape(RoundedRectangle(cornerRadius: 40))
-                        .offset(y: -60)
+                        .padding(.top, 300)
 
                     }
 

@@ -12,7 +12,6 @@ struct CategoryView: View {
                 .frame(width: 40, height: 40)
                 .overlay {
                     Image(imageName)
-                        .padding(10)
                 }
 
             Text(title)
