@@ -14,6 +14,8 @@ class DetailsViewModel: ObservableObject, Loadable {
     @MainActor
     func fetchCocktailDetails(for cocktailID: String?) {
         Task(priority: .userInitiated) {
+            state = .loading
+
             if let cocktailID = cocktailID {
                 state = await fetchDetails(for: cocktailID)
             } else {
