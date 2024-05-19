@@ -22,6 +22,9 @@
 		705AB2252BFA75B90039B642 /* FilterResultUseCaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705AB2242BFA75B90039B642 /* FilterResultUseCaseModel.swift */; };
 		705AB2282BFA76C10039B642 /* FilterResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705AB2272BFA76C10039B642 /* FilterResultsViewModel.swift */; };
 		705AB22C2BFA789E0039B642 /* FilterResultCocktailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705AB22B2BFA789E0039B642 /* FilterResultCocktailModel.swift */; };
+		705AB22E2BFAA59D0039B642 /* FilterResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705AB22D2BFAA59D0039B642 /* FilterResultsView.swift */; };
+		705AB2302BFAA9370039B642 /* FilterNavigationDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705AB22F2BFAA9370039B642 /* FilterNavigationDestination.swift */; };
+		705AB2332BFAAAA10039B642 /* NavigationPathManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705AB2322BFAAAA10039B642 /* NavigationPathManager.swift */; };
 		70DB834D2BF8CDF30032BBB8 /* CoqtailsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DB834C2BF8CDF30032BBB8 /* CoqtailsApp.swift */; };
 		70DB834F2BF8CDF30032BBB8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DB834E2BF8CDF30032BBB8 /* ContentView.swift */; };
 		70DB83512BF8CDF50032BBB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70DB83502BF8CDF50032BBB8 /* Assets.xcassets */; };
@@ -125,6 +128,9 @@
 		705AB2242BFA75B90039B642 /* FilterResultUseCaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterResultUseCaseModel.swift; sourceTree = "<group>"; };
 		705AB2272BFA76C10039B642 /* FilterResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterResultsViewModel.swift; sourceTree = "<group>"; };
 		705AB22B2BFA789E0039B642 /* FilterResultCocktailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterResultCocktailModel.swift; sourceTree = "<group>"; };
+		705AB22D2BFAA59D0039B642 /* FilterResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterResultsView.swift; sourceTree = "<group>"; };
+		705AB22F2BFAA9370039B642 /* FilterNavigationDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterNavigationDestination.swift; sourceTree = "<group>"; };
+		705AB2322BFAAAA10039B642 /* NavigationPathManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationPathManager.swift; sourceTree = "<group>"; };
 		70DB83492BF8CDF30032BBB8 /* Coqtails.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coqtails.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70DB834C2BF8CDF30032BBB8 /* CoqtailsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoqtailsApp.swift; sourceTree = "<group>"; };
 		70DB834E2BF8CDF30032BBB8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -316,6 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				705AB22A2BFA78760039B642 /* Models */,
+				705AB22D2BFAA59D0039B642 /* FilterResultsView.swift */,
 				705AB2272BFA76C10039B642 /* FilterResultsViewModel.swift */,
 			);
 			path = FilterResultsView;
@@ -336,6 +343,14 @@
 				705AB22B2BFA789E0039B642 /* FilterResultCocktailModel.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		705AB2312BFAAA8F0039B642 /* NavigationPathManager */ = {
+			isa = PBXGroup;
+			children = (
+				705AB2322BFAAAA10039B642 /* NavigationPathManager.swift */,
+			);
+			path = NavigationPathManager;
 			sourceTree = "<group>";
 		};
 		70DB83402BF8CDF30032BBB8 = {
@@ -432,6 +447,7 @@
 		70DB83832BF8E3160032BBB8 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				705AB2312BFAAA8F0039B642 /* NavigationPathManager */,
 				70DB83822BF8D2C70032BBB8 /* Extensions */,
 				70DB840B2BF91F280032BBB8 /* Utils */,
 			);
@@ -652,6 +668,7 @@
 			children = (
 				70DB83FA2BF915E90032BBB8 /* FiltersView */,
 				705AB2262BFA76710039B642 /* FilterResultsView */,
+				705AB22F2BFAA9370039B642 /* FilterNavigationDestination.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -935,6 +952,7 @@
 				705AB2132BFA71310039B642 /* FilterResultsClient.swift in Sources */,
 				70DB83E42BF908140032BBB8 /* FiltersUseCaseProtocol.swift in Sources */,
 				70DB83F82BF9158F0032BBB8 /* FiltersView.swift in Sources */,
+				705AB22E2BFAA59D0039B642 /* FilterResultsView.swift in Sources */,
 				70DB83D32BF907360032BBB8 /* FilterEndpoint.swift in Sources */,
 				705AB2252BFA75B90039B642 /* FilterResultUseCaseModel.swift in Sources */,
 				70DB83C32BF8FCD70032BBB8 /* TextFieldCancelButton.swift in Sources */,
@@ -970,10 +988,12 @@
 				70DB83A42BF8F7E70032BBB8 /* SearchCocktailResponseModel.swift in Sources */,
 				70DB83E02BF907B30032BBB8 /* FilterGlassTypeClientModel.swift in Sources */,
 				70DB84252BF9F3360032BBB8 /* DetailsView.swift in Sources */,
+				705AB2302BFAA9370039B642 /* FilterNavigationDestination.swift in Sources */,
 				70DB83AD2BF8F84E0032BBB8 /* SearchCoctailUseCaseModel.swift in Sources */,
 				70DB84162BF921950032BBB8 /* DetailsCocktailUseCaseModel.swift in Sources */,
 				70DB84082BF91EFC0032BBB8 /* DetailsCocktailResponseModel.swift in Sources */,
 				70DB837F2BF8D2A90032BBB8 /* HTTPMethod.swift in Sources */,
+				705AB2332BFAAAA10039B642 /* NavigationPathManager.swift in Sources */,
 				70DB83EB2BF908B40032BBB8 /* FilterCategoryTypeUseCaseModel.swift in Sources */,
 				705AB2222BFA75770039B642 /* FilterResultsUseCase.swift in Sources */,
 				70DB83AA2BF8F82B0032BBB8 /* SearchUseCase.swift in Sources */,
