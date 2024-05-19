@@ -3,7 +3,6 @@ import SwiftUI
 struct FiltersView: View {
 
     @EnvironmentObject private var navigationPathManager: NavigationPathManager
-    @Environment(\.dismiss) private var dismiss
 
     @StateObject private var viewModel = FiltersViewModel(filterUseCase: FiltersUseCase(filterClient: FiltersClient(baseClient: BaseClient())))
 
@@ -12,7 +11,7 @@ struct FiltersView: View {
             AsyncContentView(source: viewModel, loadingView: LoadingView()) { filters in
                 HStack {
                     Button {
-                        dismiss()
+                        navigationPathManager.navigationPath.removeLast()
                     } label: {
                         Image("back")
                             .resizable()
@@ -87,6 +86,7 @@ struct FiltersView: View {
             switch destination {
             case .details(let cocktailID):
                 DetailsView(cocktailID: cocktailID)
+                    .environmentObject(navigationPathManager)
             case .filterResults(let selectedFilters):
                 FilterResultsView(selectedFilters: selectedFilters)
                     .environmentObject(navigationPathManager)

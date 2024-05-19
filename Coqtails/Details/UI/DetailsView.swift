@@ -4,7 +4,8 @@ import UIKit
 import Kingfisher
 
 struct DetailsView: View {
-    @Environment(\.dismiss) private var dismiss
+
+    @EnvironmentObject private var navigationPathManager: NavigationPathManager
 
     @StateObject private var viewModel = DetailsViewModel(detailsUseCase: DetailsUseCase(detailsClient: DetailsClient(baseClient: BaseClient())))
 
@@ -22,7 +23,7 @@ struct DetailsView: View {
                 HStack {
 
                     Button {
-                        dismiss()
+                        navigationPathManager.navigationPath.removeLast()
                     } label: {
                         Image("back")
                             .resizable()
