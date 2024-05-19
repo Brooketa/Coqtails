@@ -50,7 +50,7 @@ struct SearchView: View {
             .navigationDestination(for: SearchNavigationDestination.self) { destination in
                 switch destination {
                 case .details(let cocktailID):
-                    Text(cocktailID ?? "")
+                    DetailsView(cocktailID: cocktailID)
                 case .filters:
                     FiltersView()
                 }
@@ -72,7 +72,7 @@ struct SearchView: View {
 
     private var feelingLuckyButton: some View {
         Button {
-            print("buttonTapped")
+            navigationPath.append(SearchNavigationDestination.details(nil))
         } label: {
             Text("FEELING LUCKY")
                 .font(.subheadline)
