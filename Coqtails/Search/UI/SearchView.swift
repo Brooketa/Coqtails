@@ -72,7 +72,7 @@ struct SearchView: View {
 
     private var feelingLuckyButton: some View {
         Button {
-            print("buttonTapped")
+            navigationPath.append(SearchNavigationDestination.details(nil))
         } label: {
             Text("FEELING LUCKY")
                 .font(.subheadline)

@@ -8,6 +8,8 @@ struct DetailsView: View {
 
     @StateObject private var viewModel = DetailsViewModel(detailsUseCase: DetailsUseCase(detailsClient: DetailsClient(baseClient: BaseClient())))
 
+    @State private var scrollViewSize: CGSize = .zero
+
     let cocktailID: String?
 
     init(cocktailID: String?) {
@@ -40,62 +42,59 @@ struct DetailsView: View {
                         .font(.system(size: 17))
                         .fontWeight(.semibold)
                         .foregroundStyle(.white)
-                        .frame(width: 50)
-
                 }
 
                 ScrollView {
-                    GeometryReader { proxy in
-                        let offset = proxy.size.width * 0.75
+                    ZStack {
+                        VStack {
+                            KFImage(cocktail.thumbnailURL)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
 
-                        ZStack {
+                            Spacer()
+                        }
 
-                            VStack {
-                                KFImage(cocktail.thumbnailURL)
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
+                        VStack(alignment: .leading, spacing: 20) {
+                            DetailsCategoriesView(
+                                categoryType: cocktail.category,
+                                glassType: cocktail.glassType,
+                                alcoholicType: cocktail.drinkType
+                            )
+                            .padding(.top, 20)
+                            .padding(.horizontal, 20)
 
-                                Spacer()
-                            }
+                            Divider()
 
-                            VStack(alignment: .leading, spacing: 20) {
-                                DetailsCategoriesView(
-                                    categoryType: cocktail.category,
-                                    glassType: cocktail.glassType,
-                                    alcoholicType: cocktail.drinkType
-                                )
-                                .padding(.top, 20)
+                            DetailsIngredientsView(ingredients: cocktail.ingredients)
                                 .padding(.horizontal, 20)
 
-                                Divider()
+                            Divider()
+                                .padding(.horizontal, 20)
 
-                                DetailsIngredientsView(ingredients: cocktail.ingredients)
-                                    .padding(.horizontal, 20)
+                            DetailsDirectionsView(directions: cocktail.instructions ?? "")
+                                .padding(.horizontal, 20)
+                                .frame(height: 100)
+                                .frame(maxHeight: .infinity)
 
-                                Divider()
-                                    .padding(.horizontal, 20)
 
-                                DetailsDirectionsView(directions: cocktail.instructions ?? "")
-                                    .padding(.horizontal, 20)
+                            Divider()
+                                .padding(.horizontal, 20)
 
-                                Divider()
-                                    .padding(.horizontal, 20)
-
-                                DetailsLastModifiedView(lastModified: cocktail.lastModified)
-                                    .padding(.horizontal, 20)
-                                    .padding(.bottom, 20)
-
-                            }
-                            .background {
-                                Color(.primaryBackground)
-                            }
-                            .clipShape(RoundedRectangle(cornerRadius: 40))
-                            .padding(.top, offset)
+                            DetailsLastModifiedView(lastModified: cocktail.lastModified)
+                                .padding(.horizontal, 20)
+                                .padding(.bottom, 20)
 
                         }
+                        .background {
+                            Color(.primaryBackground)
+                        }
+                        .clipShape(RoundedRectangle(cornerRadius: 40))
+                        .padding(.top, scrollViewSize.width * 0.75)
+                        .frame(maxHeight: .infinity)
                     }
                 }
                 .scrollIndicators(.hidden)
+                .saveSize(in: $scrollViewSize)
             }
         }
         .background(Color.primaryBackground)

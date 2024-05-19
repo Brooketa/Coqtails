@@ -15,9 +15,11 @@ struct DetailsDirectionsView: View {
             Text(directions)
                 .font(.subheadline)
                 .foregroundStyle(.black)
-                .frame(maxWidth: .infinity, alignment: .leading)
+                .lineLimit(nil)
                 .padding(.vertical, 8)
+                .frame(maxWidth: .infinity ,alignment: .leading)
         }
+        .frame(maxHeight: .infinity)
     }
 
 }
