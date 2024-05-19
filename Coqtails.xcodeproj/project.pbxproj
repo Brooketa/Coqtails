@@ -12,6 +12,7 @@
 		705AB2062BFA23AF0039B642 /* DetailsDirectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705AB2052BFA23AF0039B642 /* DetailsDirectionsView.swift */; };
 		705AB2092BFA27F80039B642 /* DetailsLastModifiedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705AB2082BFA27F80039B642 /* DetailsLastModifiedView.swift */; };
 		705AB20F2BFA393D0039B642 /* SizeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705AB20E2BFA393D0039B642 /* SizeCalculator.swift */; };
+		705AB2112BFA405F0039B642 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705AB2102BFA405F0039B642 /* Date+Extensions.swift */; };
 		70DB834D2BF8CDF30032BBB8 /* CoqtailsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DB834C2BF8CDF30032BBB8 /* CoqtailsApp.swift */; };
 		70DB834F2BF8CDF30032BBB8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DB834E2BF8CDF30032BBB8 /* ContentView.swift */; };
 		70DB83512BF8CDF50032BBB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70DB83502BF8CDF50032BBB8 /* Assets.xcassets */; };
@@ -105,6 +106,7 @@
 		705AB2052BFA23AF0039B642 /* DetailsDirectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsDirectionsView.swift; sourceTree = "<group>"; };
 		705AB2082BFA27F80039B642 /* DetailsLastModifiedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsLastModifiedView.swift; sourceTree = "<group>"; };
 		705AB20E2BFA393D0039B642 /* SizeCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeCalculator.swift; sourceTree = "<group>"; };
+		705AB2102BFA405F0039B642 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		70DB83492BF8CDF30032BBB8 /* Coqtails.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coqtails.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70DB834C2BF8CDF30032BBB8 /* CoqtailsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoqtailsApp.swift; sourceTree = "<group>"; };
 		70DB834E2BF8CDF30032BBB8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 		70DB83822BF8D2C70032BBB8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				705AB2102BFA405F0039B642 /* Date+Extensions.swift */,
 				70DB841C2BF964C10032BBB8 /* DateFormatter+Extensions.swift */,
 				70DB83802BF8D2C30032BBB8 /* JSONDecoder+Extensions.swift */,
 				70DB84262BF9F65F0032BBB8 /* UINavigationController+Extensions.swift */,
@@ -837,6 +840,7 @@
 				70DB83892BF8E4030032BBB8 /* Loadable.swift in Sources */,
 				70DB83B02BF8F87B0032BBB8 /* SearchViewModel.swift in Sources */,
 				70DB83DE2BF907A40032BBB8 /* FilterGlassTypeResponseModel.swift in Sources */,
+				705AB2112BFA405F0039B642 /* Date+Extensions.swift in Sources */,
 				70DB84182BF95FD80032BBB8 /* DetailsViewModel.swift in Sources */,
 				70DB838C2BF8E41B0032BBB8 /* ErrorPopoverView.swift in Sources */,
 				70DB83A12BF8F7840032BBB8 /* SearchEndpoints.swift in Sources */,

@@ -12,7 +12,7 @@ struct DetailsLastModifiedView: View {
                 .foregroundStyle(.black)
                 .frame(alignment: .leading)
 
-            Text("\(lastModified.description)")
+            Text("\(lastModified.timeAgo())")
                 .font(.system(size: 16))
         }
         .padding(.horizontal, 20)
