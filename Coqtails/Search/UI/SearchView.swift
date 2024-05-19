@@ -49,6 +49,7 @@ struct SearchView: View {
 
                 }
             }
+            .background(Color.primaryBackground)
             .toolbar(.hidden, for: .navigationBar)
             .navigationDestination(for: SearchNavigationDestination.self) { destination in
                 switch destination {

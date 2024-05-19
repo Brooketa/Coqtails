@@ -81,6 +81,7 @@ struct FiltersView: View {
                 }
             }
         }
+        .background(Color.primaryBackground)
         .navigationBarBackButtonHidden()
         .navigationDestination(for: FilterNavigationDestination.self) { destination in
             switch destination {
