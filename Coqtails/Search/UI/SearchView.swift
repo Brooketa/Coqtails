@@ -54,6 +54,7 @@ struct SearchView: View {
                 switch destination {
                 case .details(let cocktailID):
                     DetailsView(cocktailID: cocktailID)
+                        .environmentObject(navigationPathManager)
                 case .filters:
                     FiltersView()
                         .environmentObject(navigationPathManager)
