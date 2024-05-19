@@ -10,7 +10,7 @@ struct SearchView: View {
     var body: some View {
         NavigationStack(path: $navigationPathManager.navigationPath) {
             VStack(spacing: 0) {
-                AsyncContentView(source: viewModel, loadingView: LoadingView()) { coctails in
+                AsyncContentView(source: viewModel, loadingView: LoadingView()) { cocktails in
 
                     HStack(spacing: 15) {
                         SearchBarView(
@@ -31,12 +31,12 @@ struct SearchView: View {
 
                     ScrollView {
                         LazyVStack(spacing: 0) {
-                            ForEach(coctails) { coctail in
-                                CoctailListItemView(model: coctail)
+                            ForEach(cocktails) { cocktail in
+                                CoctailListItemView(model: cocktail)
                                     .onTapGesture {
                                         navigationPathManager
                                             .navigationPath
-                                            .append(SearchNavigationDestination.details(coctail.remoteID))
+                                            .append(SearchNavigationDestination.details(cocktail.remoteID))
                                     }
                             }
                         }
