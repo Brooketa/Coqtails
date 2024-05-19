@@ -40,7 +40,7 @@ struct FilterResultsView: View {
                 ScrollView {
                     LazyVStack(spacing: 0) {
                         ForEach(cocktails) { cocktail in
-                            CoctailListItemView(model: cocktail)
+                            CocktailListItemView(model: cocktail)
                                 .onTapGesture {
                                     navigationPathManager
                                         .navigationPath
@@ -61,7 +61,7 @@ struct FilterResultsView: View {
     }
 }
 
-extension CoctailListItemView {
+extension CocktailListItemView {
 
     init(model: FilterResultCocktailModel) {
         self.highlightText = ""
