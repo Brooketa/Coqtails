@@ -17,6 +17,7 @@ struct DetailsIngredientsView: View {
                 HStack {
                     Text("•")
                         .font(.system(size: 18))
+                        .fontWeight(.bold)
                         .foregroundStyle(.black)
 
                     Text(ingredient)
