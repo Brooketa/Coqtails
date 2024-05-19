@@ -44,7 +44,7 @@ struct FilterResultsView: View {
                                 .onTapGesture {
                                     navigationPathManager
                                         .navigationPath
-                                        .append(FilterNavigationDestination.details(cocktail.remoteID))
+                                        .append(FilterNavigationDestination.details(cocktail.cocktailID))
                                 }
                         }
                     }
@@ -65,10 +65,11 @@ struct FilterResultsView: View {
 extension CocktailListItemView {
 
     init(model: FilterResultCocktailModel) {
-        self.highlightText = ""
         self.thumbnailURL = model.thumbnailURL
         self.name = model.name
-        self.instructions = model.instructions
+
+        self.highlightText = ""
+        self.instructions = ""
     }
 
 }
