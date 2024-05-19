@@ -1,7 +1,7 @@
 import SwiftUI
 import Kingfisher
 
-struct CoctailListItemView: View {
+struct CocktailListItemView: View {
 
     let highlightText: String
     let thumbnailURL: URL?
@@ -58,12 +58,12 @@ struct CoctailListItemView: View {
 
     private var attributedCocktailName: AttributedString {
         let cocktailNameLower = name.lowercased()
+        let textToHighlight = highlightText.lowercased().trimmingCharacters(in: .whitespaces)
+
         guard
-            let range = cocktailNameLower.range(of: highlightText.lowercased()),
+            let range = cocktailNameLower.range(of: textToHighlight),
             highlightText.trimmingCharacters(in: .whitespaces).isEmpty == false
-        else {
-            return AttributedString(name)
-        }
+        else { return AttributedString(name) }
 
         var cocktailName = name
         cocktailName.insert(contentsOf: "**", at: range.upperBound)
