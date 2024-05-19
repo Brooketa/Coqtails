@@ -10,10 +10,7 @@ extension JSONDecoder {
     }()
 
     private func setISO8601NoTDateDecodingStrategy() {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-
-        self.dateDecodingStrategy = .formatted(dateFormatter)
+        self.dateDecodingStrategy = .formatted(DateFormatter.iso8601NoTDateFormatter)
     }
 
 }
