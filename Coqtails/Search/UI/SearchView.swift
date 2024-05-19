@@ -2,7 +2,7 @@ import SwiftUI
 
 struct SearchView: View {
 
-    @StateObject var presenter = SearchViewModel(searchUseCase: SearchUseCase(searchClient: SearchClient(baseClient: BaseClient())))
+    @StateObject var viewModel = SearchViewModel(searchUseCase: SearchUseCase(searchClient: SearchClient(baseClient: BaseClient())))
 
     @State private var navigationPath = NavigationPath()
     @State private var shouldFocusSearchTextField: Bool = false
@@ -10,15 +10,15 @@ struct SearchView: View {
     var body: some View {
         NavigationStack(path: $navigationPath) {
             VStack(spacing: 0) {
-                AsyncContentView(source: presenter, loadingView: LoadingView()) { coctails in
+                AsyncContentView(source: viewModel, loadingView: LoadingView()) { coctails in
 
                     HStack(spacing: 15) {
                         SearchBarView(
-                            searchText: $presenter.searchText,
+                            searchText: $viewModel.searchText,
                             shouldBeFocused: $shouldFocusSearchTextField
                         )
 
-                        if presenter.searchText.isEmpty && !shouldFocusSearchTextField {
+                        if viewModel.searchText.isEmpty && !shouldFocusSearchTextField {
                             filterButton
                         }
                     }
