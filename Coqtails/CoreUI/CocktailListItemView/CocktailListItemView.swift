@@ -37,6 +37,7 @@ struct CocktailListItemView: View {
             }
         }
         .padding(20)
+        .contentShape(Rectangle())
 
         Divider()
             .padding(.horizontal, 20)
