@@ -45,53 +45,55 @@ struct DetailsView: View {
                 }
 
                 ScrollView {
+                    GeometryReader { proxy in
+                        let offset = proxy.size.width * 0.75
 
-                    ZStack {
+                        ZStack {
 
-                        VStack {
-                            KFImage(cocktail.thumbnailURL)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
+                            VStack {
+                                KFImage(cocktail.thumbnailURL)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
 
-                            Spacer()
+                                Spacer()
+                            }
+
+                            VStack(alignment: .leading, spacing: 20) {
+                                DetailsCategoriesView(
+                                    categoryType: cocktail.category,
+                                    glassType: cocktail.glassType,
+                                    alcoholicType: cocktail.drinkType
+                                )
+                                .padding(.top, 20)
+                                .padding(.horizontal, 20)
+
+                                Divider()
+
+                                DetailsIngredientsView(ingredients: cocktail.ingredients)
+                                    .padding(.horizontal, 20)
+
+                                Divider()
+                                    .padding(.horizontal, 20)
+
+                                DetailsDirectionsView(directions: cocktail.instructions ?? "")
+                                    .padding(.horizontal, 20)
+
+                                Divider()
+                                    .padding(.horizontal, 20)
+
+                                DetailsLastModifiedView(lastModified: cocktail.lastModified)
+                                    .padding(.horizontal, 20)
+                                    .padding(.bottom, 20)
+
+                            }
+                            .background {
+                                Color(.primaryBackground)
+                            }
+                            .clipShape(RoundedRectangle(cornerRadius: 40))
+                            .padding(.top, offset)
+
                         }
-
-                        VStack(alignment: .leading, spacing: 20) {
-                            DetailsCategoriesView(
-                                categoryType: cocktail.category,
-                                glassType: cocktail.glassType,
-                                alcoholicType: cocktail.drinkType
-                            )
-                            .padding(.top, 20)
-                            .padding(.horizontal, 20)
-
-                            Divider()
-
-                            DetailsIngredientsView(ingredients: cocktail.ingredients)
-                                .padding(.horizontal, 20)
-
-                            Divider()
-                                .padding(.horizontal, 20)
-
-                            DetailsDirectionsView(directions: cocktail.instructions ?? "")
-                                .padding(.horizontal, 20)
-
-                            Divider()
-                                .padding(.horizontal, 20)
-
-                            DetailsLastModifiedView(lastModified: cocktail.lastModified)
-                                .padding(.horizontal, 20)
-                                .padding(.bottom, 20)
-
-                        }
-                        .background {
-                            Color(.primaryBackground)
-                        }
-                        .clipShape(RoundedRectangle(cornerRadius: 40))
-                        .padding(.top, 300)
-
                     }
-
                 }
                 .scrollIndicators(.hidden)
             }
