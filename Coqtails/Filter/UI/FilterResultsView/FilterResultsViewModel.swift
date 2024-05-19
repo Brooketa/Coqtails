@@ -2,7 +2,7 @@ import SwiftUI
 
 class FilterResultsViewModel: ObservableObject, Loadable {
 
-    @Published var state = LoadingState<Int>.idle
+    @Published var state = LoadingState<[FilterResultCocktailModel]>.idle
 
     private let filterResultsUseCase: FilterResultsUseCaseProtocol
 
@@ -15,11 +15,12 @@ class FilterResultsViewModel: ObservableObject, Loadable {
     @MainActor func fetchFilteredCocktails(for selectedFilters: [SelectedFilter]) {
         Task(priority: .userInitiated) {
             do {
+                state = .loading
                 let filteredCocktails = try await filterResultsUseCase
                     .fetchFilteredCocktails(for: selectedFilters)
                     .map { FilterResultCocktailModel(from: $0) }
 
-                print(filteredCocktails)
+                state = .loaded(filteredCocktails)
             } catch {
                 state = .failed(error)
             }

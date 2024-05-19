@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct FiltersView: View {
+
+    @EnvironmentObject private var navigationPathManager: NavigationPathManager
     @Environment(\.dismiss) private var dismiss
 
     @StateObject private var viewModel = FiltersViewModel(filterUseCase: FiltersUseCase(filterClient: FiltersClient(baseClient: BaseClient())))
@@ -81,6 +83,15 @@ struct FiltersView: View {
             }
         }
         .navigationBarBackButtonHidden()
+        .navigationDestination(for: FilterNavigationDestination.self) { destination in
+            switch destination {
+            case .details(let cocktailID):
+                DetailsView(cocktailID: cocktailID)
+            case .filterResults(let selectedFilters):
+                FilterResultsView(selectedFilters: selectedFilters)
+                    .environmentObject(navigationPathManager)
+            }
+        }
         .task {
             viewModel.fetchAllFilters()
         }
@@ -89,7 +100,9 @@ struct FiltersView: View {
     private var searchButton: some View {
         Button {
             if viewModel.searchButtonIsEnabled {
-                //TODO: Handle button tap
+                navigationPathManager
+                    .navigationPath
+                    .append(FilterNavigationDestination.filterResults(viewModel.selectedFilters))
             }
         } label: {
             Text("SEARCH")

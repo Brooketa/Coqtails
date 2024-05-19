@@ -3,11 +3,14 @@ import Kingfisher
 
 struct CoctailListItemView: View {
 
-    let model: SearchCocktailModel
+    let highlightText: String
+    let thumbnailURL: URL?
+    let name: String
+    let instructions: String
 
     var body: some View {
         HStack(spacing: 30) {
-            KFImage(model.thumbnailURL)
+            KFImage(thumbnailURL)
                 .placeholder {
                     RoundedRectangle(cornerRadius: 20)
                         .frame(width: 73, height: 87)
@@ -19,13 +22,13 @@ struct CoctailListItemView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 20))
 
             VStack(alignment: .leading){
-                if model.highlightText.isEmpty {
+                if highlightText.isEmpty {
                     regularCocktailName
                 } else {
                     highlightedCoctailName
                 }
 
-                Text(model.instructions.components(separatedBy: ".").first ?? "")
+                Text(instructions.components(separatedBy: ".").first ?? "")
                     .foregroundStyle(.secondary)
                     .font(.caption)
                     .lineLimit(1)
@@ -40,7 +43,7 @@ struct CoctailListItemView: View {
     }
 
     private var regularCocktailName: some View {
-        Text(model.name)
+        Text(name)
             .font(.subheadline)
             .fontWeight(.bold)
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -54,20 +57,20 @@ struct CoctailListItemView: View {
     }
 
     private var attributedCocktailName: AttributedString {
-        let cocktailNameLower = model.name.lowercased()
+        let cocktailNameLower = name.lowercased()
         guard
-            let range = cocktailNameLower.range(of: model.highlightText.lowercased()),
-            model.highlightText.trimmingCharacters(in: .whitespaces).isEmpty == false
+            let range = cocktailNameLower.range(of: highlightText.lowercased()),
+            highlightText.trimmingCharacters(in: .whitespaces).isEmpty == false
         else {
-            return AttributedString(model.name)
+            return AttributedString(name)
         }
 
-        var cocktailName = model.name
+        var cocktailName = name
         cocktailName.insert(contentsOf: "**", at: range.upperBound)
         cocktailName.insert(contentsOf: "**", at: range.lowerBound)
 
         guard let attributedCocktailName = try? AttributedString(markdown: cocktailName) else {
-            return AttributedString(model.name)
+            return AttributedString(name)
         }
 
         return attributedCocktailName

@@ -3,12 +3,12 @@ import SwiftUI
 struct SearchView: View {
 
     @StateObject var viewModel = SearchViewModel(searchUseCase: SearchUseCase(searchClient: SearchClient(baseClient: BaseClient())))
+    @StateObject var navigationPathManager = NavigationPathManager()
 
-    @State private var navigationPath = NavigationPath()
     @State private var shouldFocusSearchTextField: Bool = false
 
     var body: some View {
-        NavigationStack(path: $navigationPath) {
+        NavigationStack(path: $navigationPathManager.navigationPath) {
             VStack(spacing: 0) {
                 AsyncContentView(source: viewModel, loadingView: LoadingView()) { coctails in
 
@@ -34,7 +34,9 @@ struct SearchView: View {
                             ForEach(coctails) { coctail in
                                 CoctailListItemView(model: coctail)
                                     .onTapGesture {
-                                        navigationPath.append(SearchNavigationDestination.details(coctail.remoteID))
+                                        navigationPathManager
+                                            .navigationPath
+                                            .append(SearchNavigationDestination.details(coctail.remoteID))
                                     }
                             }
                         }
@@ -47,12 +49,14 @@ struct SearchView: View {
 
                 }
             }
+            .toolbar(.hidden, for: .navigationBar)
             .navigationDestination(for: SearchNavigationDestination.self) { destination in
                 switch destination {
                 case .details(let cocktailID):
                     DetailsView(cocktailID: cocktailID)
                 case .filters:
                     FiltersView()
+                        .environmentObject(navigationPathManager)
                 }
             }
         }
@@ -60,7 +64,7 @@ struct SearchView: View {
 
     private var filterButton: some View {
         Button {
-            navigationPath.append(SearchNavigationDestination.filters)
+            navigationPathManager.navigationPath.append(SearchNavigationDestination.filters)
         } label: {
             Image("filter", bundle: nil)
                 .resizable()
@@ -72,7 +76,7 @@ struct SearchView: View {
 
     private var feelingLuckyButton: some View {
         Button {
-            navigationPath.append(SearchNavigationDestination.details(nil))
+            navigationPathManager.navigationPath.append(SearchNavigationDestination.details(nil))
         } label: {
             Text("FEELING LUCKY")
                 .font(.subheadline)
@@ -85,6 +89,17 @@ struct SearchView: View {
         .tint(.primaryAccentColor)
         .clipShape(RoundedRectangle(cornerRadius: 30))
         .padding(.bottom, 10)
+    }
+
+}
+
+extension CoctailListItemView {
+
+    init(model: SearchCocktailModel) {
+        self.highlightText = model.highlightText
+        self.thumbnailURL = model.thumbnailURL
+        self.name = model.name
+        self.instructions = model.instructions
     }
 
 }
