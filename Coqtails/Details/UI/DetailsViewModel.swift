@@ -27,7 +27,6 @@ class DetailsViewModel: ObservableObject, Loadable {
             let details = try await detailsUseCase.fetchCocktailDetails(for: cocktailID)
             let cocktailDetails = DetailsCocktailModel(from: details)
 
-            print(cocktailDetails.instructions)
             return .loaded(cocktailDetails)
         } catch {
             return .failed(error)
