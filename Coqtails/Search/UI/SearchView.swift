@@ -50,7 +50,7 @@ struct SearchView: View {
             .navigationDestination(for: SearchNavigationDestination.self) { destination in
                 switch destination {
                 case .details(let cocktailID):
-                    Text(cocktailID ?? "")
+                    DetailsView(cocktailID: cocktailID)
                 case .filters:
                     FiltersView()
                 }
