@@ -7,28 +7,34 @@ class FiltersClient: FiltersClientProtocol {
     }
 
     func fetchCategoryTypes() async throws -> [FilterCategoryTypeClientModel] {
+        let endpoint = FilterEndpoint.category
+
         let response: FilterCategoryTypeResponseModel = try await baseClient.execute(
-            path: FilterEndpoints.list,
+            path: endpoint.path,
             method: .get,
-            parameters: ["c": "list"])
+            parameters: endpoint.parameters)
 
         return response.categoryTypes
     }
 
     func fetchGlassTypes() async throws -> [FilterGlassTypeClientModel] {
+        let endpoint = FilterEndpoint.glass
+
         let response: FilterGlassTypeResponseModel = try await baseClient.execute(
-            path: FilterEndpoints.list,
+            path: endpoint.path,
             method: .get,
-            parameters: ["g": "list"])
+            parameters: endpoint.parameters)
 
         return response.glassTypes
     }
 
     func fetchAlcoholicTypes() async throws -> [FilterAlcoholicTypeClientModel] {
+        let endpoint = FilterEndpoint.alcoholic
+
         let response: FilterAlcoholicTypeResponseModel = try await baseClient.execute(
-            path: FilterEndpoints.list,
+            path: endpoint.path,
             method: .get,
-            parameters: ["a": "list"])
+            parameters: endpoint.parameters)
 
         return response.drinkTypes
     }
