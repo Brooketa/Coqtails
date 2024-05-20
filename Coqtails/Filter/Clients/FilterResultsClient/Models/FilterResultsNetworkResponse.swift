@@ -1,5 +1,9 @@
-struct FilterResultsResponseModel: Decodable {
+struct FilterResultsNetworkResponse: Decodable {
 
-    let drinks: [FilterResultClientModel]?
+    let filteredCocktailDetails: [FilterResultClientModel]
+
+    enum CodingKeys: String, CodingKey {
+        case filteredCocktailDetails = "drinks"
+    }
 
 }

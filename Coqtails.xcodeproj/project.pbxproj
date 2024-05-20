@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7027CA512BFB9E4F00B27AD0 /* Sequence+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7027CA502BFB9E4F00B27AD0 /* Sequence+Extensions.swift */; };
+		7027CA532BFBA12400B27AD0 /* FilterResultsIDNetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7027CA522BFBA12400B27AD0 /* FilterResultsIDNetworkResponse.swift */; };
+		7027CA552BFBA13300B27AD0 /* FilterResultIDClientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7027CA542BFBA13300B27AD0 /* FilterResultIDClientModel.swift */; };
 		705AB1FE2BFA19430039B642 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705AB1FD2BFA19430039B642 /* CategoryView.swift */; };
 		705AB2032BFA23670039B642 /* DetailsIngredientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705AB2022BFA23670039B642 /* DetailsIngredientsView.swift */; };
 		705AB2062BFA23AF0039B642 /* DetailsDirectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705AB2052BFA23AF0039B642 /* DetailsDirectionsView.swift */; };
@@ -113,6 +116,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7027CA502BFB9E4F00B27AD0 /* Sequence+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Extensions.swift"; sourceTree = "<group>"; };
+		7027CA522BFBA12400B27AD0 /* FilterResultsIDNetworkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterResultsIDNetworkResponse.swift; sourceTree = "<group>"; };
+		7027CA542BFBA13300B27AD0 /* FilterResultIDClientModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterResultIDClientModel.swift; sourceTree = "<group>"; };
 		705AB1FD2BFA19430039B642 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		705AB2022BFA23670039B642 /* DetailsIngredientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsIngredientsView.swift; sourceTree = "<group>"; };
 		705AB2052BFA23AF0039B642 /* DetailsDirectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsDirectionsView.swift; sourceTree = "<group>"; };
@@ -274,6 +280,8 @@
 		705AB21B2BFA735C0039B642 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7027CA522BFBA12400B27AD0 /* FilterResultsIDNetworkResponse.swift */,
+				7027CA542BFBA13300B27AD0 /* FilterResultIDClientModel.swift */,
 				705AB2162BFA71570039B642 /* FilterResultsNetworkResponse.swift */,
 				705AB2182BFA71630039B642 /* FilterResultClientModel.swift */,
 			);
@@ -440,6 +448,7 @@
 				70DB841C2BF964C10032BBB8 /* DateFormatter+Extensions.swift */,
 				70DB83802BF8D2C30032BBB8 /* JSONDecoder+Extensions.swift */,
 				70DB84262BF9F65F0032BBB8 /* UINavigationController+Extensions.swift */,
+				7027CA502BFB9E4F00B27AD0 /* Sequence+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -966,7 +975,9 @@
 				70DB84182BF95FD80032BBB8 /* DetailsViewModel.swift in Sources */,
 				70DB838C2BF8E41B0032BBB8 /* ErrorPopoverView.swift in Sources */,
 				70DB83A12BF8F7840032BBB8 /* SearchEndpoint.swift in Sources */,
+				7027CA552BFBA13300B27AD0 /* FilterResultIDClientModel.swift in Sources */,
 				705AB2172BFA71570039B642 /* FilterResultsNetworkResponse.swift in Sources */,
+				7027CA512BFB9E4F00B27AD0 /* Sequence+Extensions.swift in Sources */,
 				70DB83DA2BF907820032BBB8 /* FilterCategoryTypeResponseModel.swift in Sources */,
 				70DB83DC2BF907940032BBB8 /* FilterCategoryTypeClientModel.swift in Sources */,
 				70DB83A82BF8F81A0032BBB8 /* SearchUseCaseProtocol.swift in Sources */,
@@ -999,6 +1010,7 @@
 				70DB83AA2BF8F82B0032BBB8 /* SearchUseCase.swift in Sources */,
 				70DB83ED2BF908D00032BBB8 /* FilterGlassTypeUseCaseModel.swift in Sources */,
 				70DB83F42BF909C80032BBB8 /* FilterType.swift in Sources */,
+				7027CA532BFBA12400B27AD0 /* FilterResultsIDNetworkResponse.swift in Sources */,
 				70DB83BB2BF8FC5B0032BBB8 /* SearchNavigationDestination.swift in Sources */,
 				70DB83782BF8D2530032BBB8 /* BaseClientProtocol.swift in Sources */,
 				70DB83872BF8E3EF0032BBB8 /* AsyncContentView.swift in Sources */,

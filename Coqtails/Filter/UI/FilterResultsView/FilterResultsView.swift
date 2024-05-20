@@ -60,6 +60,7 @@ struct FilterResultsView: View {
             viewModel.fetchFilteredCocktails(for: selectedFilters)
         }
     }
+
 }
 
 extension CocktailListItemView {
@@ -67,9 +68,9 @@ extension CocktailListItemView {
     init(model: FilterResultCocktailModel) {
         self.thumbnailURL = model.thumbnailURL
         self.name = model.name
+        self.ingredients = model.ingredients
 
         self.highlightText = ""
-        self.ingredients = ""
     }
 
 }
