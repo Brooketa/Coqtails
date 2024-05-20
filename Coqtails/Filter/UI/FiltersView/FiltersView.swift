@@ -94,7 +94,7 @@ struct FiltersView: View {
             }
         }
         .task {
-            viewModel.fetchAllFilters()
+            await viewModel.fetchAllFilters()
         }
     }
 

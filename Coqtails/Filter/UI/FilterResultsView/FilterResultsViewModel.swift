@@ -12,18 +12,17 @@ class FilterResultsViewModel: ObservableObject, Loadable {
 
     func load() {}
 
-    @MainActor func fetchFilteredCocktails(for selectedFilters: [SelectedFilter]) {
-        Task(priority: .userInitiated) {
-            do {
-                state = .loading
-                let filteredCocktails = try await filterResultsUseCase
-                    .fetchFilteredCocktails(for: selectedFilters)
-                    .map { FilterResultCocktailModel(from: $0) }
-
-                state = .loaded(filteredCocktails)
-            } catch {
-                state = .failed(error)
-            }
+    @MainActor
+    func fetchFilteredCocktails(for selectedFilters: [SelectedFilter]) async {
+        do {
+            state = .loading
+            let filteredCocktails = try await filterResultsUseCase
+                .fetchFilteredCocktails(for: selectedFilters)
+                .map { FilterResultCocktailModel(from: $0) }
+            
+            state = .loaded(filteredCocktails)
+        } catch {
+            state = .failed(error)
         }
     }
 
