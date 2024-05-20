@@ -6,7 +6,7 @@ struct CocktailListItemView: View {
     let highlightText: String
     let thumbnailURL: URL?
     let name: String
-    let instructions: String
+    let ingredients: String
 
     var body: some View {
         HStack(spacing: 30) {
@@ -28,7 +28,7 @@ struct CocktailListItemView: View {
                     highlightedCoctailName
                 }
 
-                Text(instructions.components(separatedBy: ".").first ?? "")
+                Text(ingredients)
                     .foregroundStyle(.secondary)
                     .font(.caption)
                     .lineLimit(1)

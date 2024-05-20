@@ -7,14 +7,14 @@ struct SearchCocktailModel: Identifiable, Hashable {
     let remoteID: String?
     let thumbnailURL: URL?
     let name: String
-    let instructions: String
+    let ingredients: String
 
-    init(searchText: String, remoteID: String?, thumbnailURL: URL?, name: String, instructions: String) {
+    init(searchText: String, remoteID: String?, thumbnailURL: URL?, name: String, ingredients: String) {
         self.highlightText = searchText
         self.remoteID = remoteID
         self.thumbnailURL = thumbnailURL
         self.name = name
-        self.instructions = instructions
+        self.ingredients = ingredients
     }
 
     init(for searchText: String, from model: SearchCoctailUseCaseModel) {
@@ -22,7 +22,7 @@ struct SearchCocktailModel: Identifiable, Hashable {
         self.remoteID = model.id
         self.thumbnailURL = URL(string: model.thumbnailURL ?? "")
         self.name = model.name ?? ""
-        self.instructions = model.instructions ?? ""
+        self.ingredients = model.ingredients
     }
 
 }
