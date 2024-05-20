@@ -3,7 +3,7 @@ import Foundation
 struct DetailsCocktailClientModel {
 
     let id: String
-    let name: String?
+    let name: String
     let thumbnailURL: String?
     let category: String
     let glassType: String
@@ -66,7 +66,7 @@ extension DetailsCocktailClientModel: Decodable {
         self.glassType = try container.decode(String.self, forKey: .glassType)
         self.drinkType = try container.decode(String.self, forKey: .drinkType)
         self.instructions = try container.decode(String.self, forKey: .instructions)
-        self.lastModified = try container.decode(String.self, forKey: .lastModified)
+        self.lastModified = try? container.decode(String.self, forKey: .lastModified)
         self.ingredients = measuresWithIngredients
     }
 
