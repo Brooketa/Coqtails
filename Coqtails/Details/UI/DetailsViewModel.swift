@@ -12,15 +12,13 @@ class DetailsViewModel: ObservableObject, Loadable {
     func load() {}
 
     @MainActor
-    func fetchCocktailDetails(for cocktailID: String?) {
-        Task(priority: .userInitiated) {
-            state = .loading
-
-            if let cocktailID = cocktailID {
-                state = await fetchDetails(for: cocktailID)
-            } else {
-                state = await fetchRandomCocktailDetails()
-            }
+    func fetchCocktailDetails(for cocktailID: String?) async {
+        state = .loading
+        
+        if let cocktailID = cocktailID {
+            state = await fetchDetails(for: cocktailID)
+        } else {
+            state = await fetchRandomCocktailDetails()
         }
     }
 

@@ -21,30 +21,28 @@ class FiltersViewModel: ObservableObject, Loadable {
     func load() {}
 
     @MainActor
-    func fetchAllFilters() {
-        Task {
-            do {
-                state = .loading
-                async let categoryFilters = try filterUseCase
-                    .fetchCategoryTypes()
-                    .map { $0.filterName }
-                let categoryModel = FilterModel(filterType: .category, filterNames: try await categoryFilters)
-
-                async let glassFilters = try filterUseCase
-                    .fetchGlassTypes()
-                    .map { $0.filterName }
-                let glassModel = FilterModel(filterType: .glass, filterNames: try await glassFilters)
-
-                async let alcoholicFilters = try filterUseCase
-                    .fetchAlcoholicTypes()
-                    .map { $0.filterName }
-                let alcoholicModel = FilterModel(filterType: .alcoholic, filterNames: try await alcoholicFilters)
-
-                state = .loaded([categoryModel, glassModel, alcoholicModel])
-            }
-            catch {
-                state = .failed(error)
-            }
+    func fetchAllFilters() async {
+        do {
+            state = .loading
+            async let categoryFilters = try filterUseCase
+                .fetchCategoryTypes()
+                .map { $0.filterName }
+            let categoryModel = FilterModel(filterType: .category, filterNames: try await categoryFilters)
+            
+            async let glassFilters = try filterUseCase
+                .fetchGlassTypes()
+                .map { $0.filterName }
+            let glassModel = FilterModel(filterType: .glass, filterNames: try await glassFilters)
+            
+            async let alcoholicFilters = try filterUseCase
+                .fetchAlcoholicTypes()
+                .map { $0.filterName }
+            let alcoholicModel = FilterModel(filterType: .alcoholic, filterNames: try await alcoholicFilters)
+            
+            state = .loaded([categoryModel, glassModel, alcoholicModel])
+        }
+        catch {
+            state = .failed(error)
         }
     }
 

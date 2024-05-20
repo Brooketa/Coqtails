@@ -57,7 +57,7 @@ struct FilterResultsView: View {
         .task {
             guard case .idle = viewModel.state  else { return }
 
-            viewModel.fetchFilteredCocktails(for: selectedFilters)
+            await viewModel.fetchFilteredCocktails(for: selectedFilters)
         }
     }
 

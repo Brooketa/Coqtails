@@ -92,7 +92,7 @@ struct DetailsView: View {
         .background(Color.primaryBackground)
         .navigationBarBackButtonHidden()
         .task {
-            viewModel.fetchCocktailDetails(for: cocktailID)
+            await viewModel.fetchCocktailDetails(for: cocktailID)
         }
     }
 
