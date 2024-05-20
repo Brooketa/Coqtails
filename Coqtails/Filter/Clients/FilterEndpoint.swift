@@ -4,6 +4,7 @@ enum FilterEndpoint {
     case glass
     case alcoholic
     case filtering([SelectedFilter])
+    case details(String)
 
     var path: String {
         switch self {
@@ -11,6 +12,8 @@ enum FilterEndpoint {
             "/list.php"
         case .filtering(_):
             "/filter.php"
+        case .details(_):
+            "/lookup.php"
         }
     }
 
@@ -24,6 +27,8 @@ enum FilterEndpoint {
             ["a" : "list"]
         case .filtering(let selectedFilters):
             createFilterParameters(for: selectedFilters)
+        case .details(let cocktailID):
+            ["i" : cocktailID]
         }
     }
 
