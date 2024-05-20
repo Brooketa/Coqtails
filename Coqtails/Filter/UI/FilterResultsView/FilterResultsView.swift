@@ -69,7 +69,7 @@ extension CocktailListItemView {
         self.name = model.name
 
         self.highlightText = ""
-        self.instructions = ""
+        self.ingredients = ""
     }
 
 }

@@ -101,7 +101,7 @@ extension CocktailListItemView {
         self.highlightText = model.highlightText
         self.thumbnailURL = model.thumbnailURL
         self.name = model.name
-        self.instructions = model.instructions
+        self.ingredients = model.ingredients
     }
 
 }
