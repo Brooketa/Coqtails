@@ -1,9 +1,13 @@
-struct SearchCoctailUseCaseModel {
+struct SearchCocktailUseCaseModel {
 
-    let id: String?
+    let id: String
     let thumbnailURL: String?
-    let name: String?
+    let name: String
     let ingredients: String
+
+}
+
+extension SearchCocktailUseCaseModel {
 
     init(from model: SearchCocktailClientModel) {
         self.id = model.id

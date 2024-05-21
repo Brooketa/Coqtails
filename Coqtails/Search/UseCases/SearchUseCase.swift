@@ -6,10 +6,10 @@ class SearchUseCase: SearchUseCaseProtocol {
         self.searchClient = searchClient
     }
 
-    func searchCoctails(query: String) async throws -> [SearchCoctailUseCaseModel] {
+    func searchCoctails(query: String) async throws -> [SearchCocktailUseCaseModel] {
         try await searchClient
             .searchCoctails(query: query)
-            .map { SearchCoctailUseCaseModel(from: $0) }
+            .map { SearchCocktailUseCaseModel(from: $0) }
     }
 
 }
