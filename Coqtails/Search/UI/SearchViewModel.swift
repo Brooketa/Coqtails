@@ -36,7 +36,9 @@ class SearchViewModel: ObservableObject, Loadable {
             .debounce(for: 0.5, scheduler: DispatchQueue.main)
             .removeDuplicates()
             .receive(on: DispatchQueue.main)
-            .sink { [unowned self] query in
+            .sink { [weak self] query in
+                guard let self = self else { return }
+
                 self.state = .loading
 
                 Task(priority: .userInitiated) {
