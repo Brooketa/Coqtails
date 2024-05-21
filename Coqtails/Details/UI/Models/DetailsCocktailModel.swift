@@ -3,7 +3,7 @@ import Foundation
 struct DetailsCocktailModel {
 
     let id: String
-    let name: String?
+    let name: String
     let thumbnailURL: URL?
     let category: String
     let glassType: String
@@ -11,6 +11,10 @@ struct DetailsCocktailModel {
     let instructions: String?
     let ingredients: [String]
     let lastModified: Date
+
+}
+
+extension DetailsCocktailModel {
 
     init(from model: DetailsCocktailUseCaseModel) {
         self.id = model.id
