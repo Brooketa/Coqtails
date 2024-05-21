@@ -2,11 +2,15 @@ import Foundation
 
 struct FilterResultCocktailModel: Identifiable, Hashable {
 
-    let id = UUID()
-    let cocktailID: String?
+    var id: String { cocktailID }
+    let cocktailID: String
     let thumbnailURL: URL?
     let name: String
     let ingredients: String
+
+}
+
+extension FilterResultCocktailModel {
 
     init(from model: FilterResultUseCaseModel) {
         self.cocktailID = model.id
