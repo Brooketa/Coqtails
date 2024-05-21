@@ -5,10 +5,11 @@ import XCTest
 
 final class SearchViewModelTest: XCTestCase {
 
+    let viewModel = SearchViewModel(searchUseCase: SearchUseCaseMock())
+
     var cancellables = Set<AnyCancellable>()
 
     func testInitialLoadStateIsIdle() {
-        let viewModel = SearchViewModel(searchUseCase: MockSearchUseCase())
         let expectation = XCTestExpectation(description: "State should be set to .idle")
 
         if case .idle = viewModel.state {
@@ -18,79 +19,119 @@ final class SearchViewModelTest: XCTestCase {
         wait(for: [expectation], timeout: 1)
     }
 
-    func testSuccessEmptySearchQuery() throws {
-        let viewModel = SearchViewModel(searchUseCase: MockSearchUseCase())
+    func testSuccessEmptySearchQuery() {
         let expectation = XCTestExpectation(description: "State should be set to .loaded with cocktails")
+
+        let searchText = ""
+
+        let firstModel = SearchCocktailModel(
+            highlightText: searchText,
+            remoteID: "12864",
+            thumbnailURL: URL(string: "https://www.thecocktaildb.com/images/media/drink/xrqxuv1454513218.jpg")!,
+            name: "Apple Cider Punch",
+            ingredients: "Apple cider, Brown sugar, Lemonade, Orange juice, Cloves, Allspice, Nutmeg, Cinnamon")
+
+        let lastModel = SearchCocktailModel(
+            highlightText: searchText,
+            remoteID: "17225",
+            thumbnailURL: URL(string: "https://www.thecocktaildb.com/images/media/drink/l3cd7f1504818306.jpg")!,
+            name: "Ace",
+            ingredients: "Gin, Grenadine, Heavy cream, Milk, Egg White")
 
         viewModel
             .$state
-            .dropFirst(2)
-            .sink { state in
+            .dropFirst()
+            .sink { [unowned self] state in
                 if case let .loaded(models) = state {
-                    let firstModel = models[0]
-                    let lastModel = models[4]
-
-                    XCTAssertEqual(viewModel.searchText, "")
+                    let firstFetchedModel = models[0]
+                    let lastFetchedModel = models[4]
+                    XCTAssertEqual(self.viewModel.searchText, searchText)
 
                     XCTAssertTrue(models.count == 5, "Cocktail count should be 5 for succesfull a response")
 
-                    XCTAssertTrue(firstModel.remoteID == "12864")
-                    XCTAssertTrue(firstModel.name == "Apple Cider Punch")
+                    XCTAssertTrue(firstFetchedModel.highlightText == firstModel.highlightText)
+                    XCTAssertTrue(firstFetchedModel.remoteID == firstModel.remoteID)
+                    XCTAssertTrue(firstFetchedModel.thumbnailURL == firstModel.thumbnailURL)
+                    XCTAssertTrue(firstFetchedModel.name == firstModel.name)
+                    XCTAssertTrue(firstFetchedModel.ingredients == firstModel.ingredients)
 
-                    XCTAssertTrue(lastModel.remoteID == "17225")
-                    XCTAssertTrue(lastModel.name == "Ace")
+                    XCTAssertTrue(lastFetchedModel.highlightText == lastModel.highlightText)
+                    XCTAssertTrue(lastFetchedModel.remoteID == lastModel.remoteID)
+                    XCTAssertTrue(lastFetchedModel.thumbnailURL == lastModel.thumbnailURL)
+                    XCTAssertTrue(lastFetchedModel.name == lastModel.name)
+                    XCTAssertTrue(lastFetchedModel.ingredients == lastModel.ingredients)
 
                     expectation.fulfill()
                 }
             }
             .store(in: &cancellables)
 
-        viewModel.searchText = ""
+        viewModel.searchText = searchText
 
-        wait(for: [expectation], timeout: 1)
+        wait(for: [expectation], timeout: 2)
     }
 
     func testSuccessMargaritaSearchQuery() {
-        let viewModel = SearchViewModel(searchUseCase: MockSearchUseCase())
         let expectation = XCTestExpectation(description: "State should be set to .loaded with Margarita cocktails")
+
+        let searchText = "Margarita"
+
+        let firstModel = SearchCocktailModel(
+            highlightText: searchText,
+            remoteID: "11007",
+            thumbnailURL: URL(string: "https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg")!,
+            name: "Margarita",
+            ingredients: "Tequila, Triple sec, Lime juice, Salt")
+
+        let lastModel = SearchCocktailModel(
+            highlightText: searchText,
+            remoteID: "17216",
+            thumbnailURL: URL(string: "https://www.thecocktaildb.com/images/media/drink/loezxn1504373874.jpg")!,
+            name: "Tommy's Margarita",
+            ingredients: "Tequila, Lime Juice, Agave syrup")
 
         viewModel
             .$state
             .dropFirst(2)
-            .sink { state in
+            .sink { [unowned self] state in
                 if case let .loaded(models) = state {
-                    let firstModel = models[0]
-                    let lastModel = models[2]
+                    let firstFetchedModel = models[0]
+                    let lastFetchedModel = models[2]
+
+                    XCTAssertEqual(self.viewModel.searchText, searchText)
 
                     XCTAssertTrue(models.count == 3, "Cocktail count should be: 3")
-                    
-                    XCTAssertTrue(firstModel.remoteID == "11007", "Expected ID: 11007")
-                    XCTAssertTrue(firstModel.name == "Margarita", "Expected name: Margarita")
 
-                    XCTAssertTrue(lastModel.remoteID == "17216", "Expected ID: 17216")
-                    XCTAssertTrue(lastModel.name == "Tommy's Margarita", "Expected name: Tommy's Margarita")
+                    XCTAssertTrue(firstFetchedModel.highlightText == firstModel.highlightText)
+                    XCTAssertTrue(firstFetchedModel.remoteID == firstModel.remoteID)
+                    XCTAssertTrue(firstFetchedModel.thumbnailURL == firstModel.thumbnailURL)
+                    XCTAssertTrue(firstFetchedModel.name == firstModel.name)
+                    XCTAssertTrue(firstFetchedModel.ingredients == firstModel.ingredients)
 
-                    XCTAssertEqual(viewModel.searchText, "Margarita")
+                    XCTAssertTrue(lastFetchedModel.highlightText == lastModel.highlightText)
+                    XCTAssertTrue(lastFetchedModel.remoteID == lastModel.remoteID)
+                    XCTAssertTrue(lastFetchedModel.thumbnailURL == lastModel.thumbnailURL)
+                    XCTAssertTrue(lastFetchedModel.name == lastModel.name)
+                    XCTAssertTrue(lastFetchedModel.ingredients == lastModel.ingredients)
 
                     expectation.fulfill()
                 }
             }
             .store(in: &cancellables)
 
-        viewModel.searchText = "Margarita"
+        viewModel.searchText = searchText
 
         wait(for: [expectation], timeout: 1)
     }
 
     func testSearchQueryFailed() {
-        let viewModel = SearchViewModel(searchUseCase: MockSearchUseCase())
         let expectation = XCTestExpectation(description: "State should be set to .failed(error)")
 
         viewModel
             .$state
             .dropFirst(2)
             .sink { state in
-                if case let .failed(error) = state {
+                if case .failed(_) = state {
                     expectation.fulfill()
                 }
             }
@@ -102,7 +143,6 @@ final class SearchViewModelTest: XCTestCase {
     }
 
     func testSuccessStateSetToLoading() {
-        let viewModel = SearchViewModel(searchUseCase: MockSearchUseCase())
         let expectation = XCTestExpectation(description: "State should be set to .loading")
 
         viewModel
@@ -115,7 +155,7 @@ final class SearchViewModelTest: XCTestCase {
             }
             .store(in: &cancellables)
 
-        viewModel.searchText = ""
+        viewModel.searchText = "loading test query"
 
         wait(for: [expectation], timeout: 1)
     }
