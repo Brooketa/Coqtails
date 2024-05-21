@@ -1,144 +1,79 @@
 import Combine
 import XCTest
+import CombineExpectations
 
 @testable import Coqtails
 
 final class DetailsViewModelTests: XCTestCase {
 
-    let viewModel = DetailsViewModel(detailsUseCase: DetailsUseCaseMock())
+    var viewModel: DetailsViewModel!
 
-    var cancellables = Set<AnyCancellable>()
-
-    func testInitialLoadStateIsIdle() {
-        let expectation = XCTestExpectation(description: "State should be set to .idle")
-
-        if case .idle = viewModel.state {
-            expectation.fulfill()
-        }
-
-        wait(for: [expectation], timeout: 1)
+    override func setUp() {
+        viewModel = DetailsViewModel(detailsUseCase: DetailsUseCaseMock())
     }
 
-    func testFetchCocktailDetailsSuccess() {
-        let expectation = XCTestExpectation(description: "State should be set to .loaded with cocktail details")
+    func testInitialLoadStateIsIdle() {
+        XCTAssertEqual(viewModel.state, .idle)
+    }
 
-        let details = DetailsCocktailModel(
-            id: "11007",
-            name: "Margarita",
-            thumbnailURL: URL(string: "https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg")!,
-            category: "Ordinary Drink",
-            glassType: "Cocktail glass",
-            drinkType: "Alcoholic",
-            instructions: "Rub the rim of the glass with the lime slice to make the salt stick to it.",
-            ingredients: ["Tequila", "Triple sec", "Lime juice", "Salt"],
-            lastModified: DateFormatter.iso8601NoTDateFormatter.date(from: "2015-08-18 14:42:59")!)
-
-        viewModel
-            .$state
-            .dropFirst(2)
-            .sink { state in
-                if case let .loaded(fetchedDetails) = state {
-                    XCTAssertEqual(fetchedDetails.id, details.id)
-                    XCTAssertEqual(fetchedDetails.name, details.name)
-                    XCTAssertEqual(fetchedDetails.thumbnailURL, details.thumbnailURL)
-                    XCTAssertEqual(fetchedDetails.category, details.category)
-                    XCTAssertEqual(fetchedDetails.glassType, details.glassType)
-                    XCTAssertEqual(fetchedDetails.drinkType, details.drinkType)
-                    XCTAssertEqual(fetchedDetails.instructions, details.instructions)
-                    XCTAssertEqual(fetchedDetails.ingredients, details.ingredients)
-                    XCTAssertEqual(fetchedDetails.lastModified, details.lastModified)
-
-                    expectation.fulfill()
-                }
-            }
-            .store(in: &cancellables)
+    func testSuccessFetchMargaritaCocktailDetails() throws {
+        XCTAssertEqual(viewModel.state, .idle)
 
         Task {
             await viewModel.fetchCocktailDetails(for: "11007")
         }
 
-        wait(for: [expectation], timeout: 1)
+        let recorder = viewModel.$state.map(\.items).filter { $0 != nil }.record()
+        _ = try wait(for: recorder.next(), timeout: 2)
+
+        let state = viewModel.state
+
+        XCTAssertEqual(state.items, DetailsTestModels.margaritaDetailsCocktailModel)
     }
 
-    func testFetchRandomCocktailDetailsSuccess() {
-        let expectation = XCTestExpectation(description: "State should be set to .loaded with cocktail details")
-
-        let details = DetailsCocktailModel(
-            id: "17216",
-            name: "Tommy's Margarita",
-            thumbnailURL: URL(string: "https://www.thecocktaildb.com/images/media/drink/loezxn1504373874.jpg")!,
-            category: "Ordinary Drink",
-            glassType: "Old-Fashioned glass",
-            drinkType: "Alcoholic",
-            instructions: "Shake and strain into a chilled cocktail glass.",
-            ingredients: ["Tequila", "Lime juice", "Agave syrup"],
-            lastModified: DateFormatter.iso8601NoTDateFormatter.date(from: "2015-08-18 14:42:59")!)
-
-        viewModel
-            .$state
-            .dropFirst(2)
-            .sink { state in
-                if case let .loaded(fetchedDetails) = state {
-                    XCTAssertEqual(fetchedDetails.id, details.id)
-                    XCTAssertEqual(fetchedDetails.name, details.name)
-                    XCTAssertEqual(fetchedDetails.thumbnailURL, details.thumbnailURL)
-                    XCTAssertEqual(fetchedDetails.category, details.category)
-                    XCTAssertEqual(fetchedDetails.glassType, details.glassType)
-                    XCTAssertEqual(fetchedDetails.drinkType, details.drinkType)
-                    XCTAssertEqual(fetchedDetails.instructions, details.instructions)
-                    XCTAssertEqual(fetchedDetails.ingredients, details.ingredients)
-                    XCTAssertEqual(fetchedDetails.lastModified, details.lastModified)
-
-                    expectation.fulfill()
-                }
-            }
-            .store(in: &cancellables)
+    func testSuccessFetchRandomCocktailDetails() throws {
+        XCTAssertEqual(viewModel.state, .idle)
 
         Task {
             await viewModel.fetchCocktailDetails(for: nil)
         }
 
-        wait(for: [expectation], timeout: 1)
+        let recorder = viewModel.$state.map(\.items).filter { $0 != nil }.record()
+        _ = try wait(for: recorder.next(), timeout: 2)
+
+        let state = viewModel.state
+
+        XCTAssertEqual(state.items, DetailsTestModels.randomDetailsCocktailModel)
     }
 
-    func testFetchCocktailDetailsFailed() {
-        let expectation = XCTestExpectation(description: "State should be set to .loaded with cocktail details")
-
-        viewModel
-            .$state
-            .dropFirst(2)
-            .sink { state in
-                if case let .failed(error) = state {
-                    expectation.fulfill()
-                }
-            }
-            .store(in: &cancellables)
+    func testFetchCocktailDetailsFailed() throws {
+        XCTAssertEqual(viewModel.state, .idle)
 
         Task {
             await viewModel.fetchCocktailDetails(for: "11118")
         }
 
-        wait(for: [expectation], timeout: 1)
+        let recorder = viewModel.$state.map(\.error).filter { $0 != nil }.record()
+        _ = try wait(for: recorder.next(), timeout: 2)
+
+        let state = viewModel.state
+
+        XCTAssertEqual(state, .failed(APIError.genericError("Unable to fetch data")))
     }
 
-    func testStateSetToLoadingSuccess() {
-        let expectation = XCTestExpectation(description: "State should be set to .loading")
-
-        viewModel
-            .$state
-            .dropFirst()
-            .sink { state in
-                if case .loading = state {
-                    expectation.fulfill()
-                }
-            }
-            .store(in: &cancellables)
+    func testSuccessStateSetToLoading() throws {
+        XCTAssertEqual(viewModel.state, .idle)
 
         Task {
             await viewModel.fetchCocktailDetails(for: "11007")
         }
 
-        wait(for: [expectation], timeout: 1)
+        let recorder = viewModel.$state.dropFirst().record()
+        _ = try wait(for: recorder.next(), timeout: 2)
+
+        let state = viewModel.state
+
+        XCTAssertEqual(state, .loading)
     }
 
 }

@@ -102,6 +102,7 @@
 		70F200E32BFD32F00014935B /* CombineExpectations in Frameworks */ = {isa = PBXBuildFile; productRef = 70F200E22BFD32F00014935B /* CombineExpectations */; };
 		70F200E62BFD336B0014935B /* LoadingState+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F200E52BFD336B0014935B /* LoadingState+Extensions.swift */; };
 		70F200E92BFD33FF0014935B /* SearchTestModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F200E82BFD33FF0014935B /* SearchTestModels.swift */; };
+		70F200EC2BFD3E7C0014935B /* DetailsTestModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F200EB2BFD3E7C0014935B /* DetailsTestModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -218,6 +219,7 @@
 		70DB842E2BF9FA230032BBB8 /* DetailsCategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCategoriesView.swift; sourceTree = "<group>"; };
 		70F200E52BFD336B0014935B /* LoadingState+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoadingState+Extensions.swift"; sourceTree = "<group>"; };
 		70F200E82BFD33FF0014935B /* SearchTestModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTestModels.swift; sourceTree = "<group>"; };
+		70F200EB2BFD3E7C0014935B /* DetailsTestModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTestModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,6 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				7024134E2BFCF9B00089B0E6 /* DetailsUseCaseMock */,
+				70F200EA2BFD3E670014935B /* TestModels */,
 				702413532BFCF9F40089B0E6 /* DetailsViewModelTests.swift */,
 			);
 			path = DetailsTests;
@@ -869,6 +872,14 @@
 			path = TestModels;
 			sourceTree = "<group>";
 		};
+		70F200EA2BFD3E670014935B /* TestModels */ = {
+			isa = PBXGroup;
+			children = (
+				70F200EB2BFD3E7C0014935B /* DetailsTestModels.swift */,
+			);
+			path = TestModels;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1100,6 +1111,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				702413502BFCF9C70089B0E6 /* DetailsUseCaseMock.swift in Sources */,
+				70F200EC2BFD3E7C0014935B /* DetailsTestModels.swift in Sources */,
 				70F200E92BFD33FF0014935B /* SearchTestModels.swift in Sources */,
 				7024134A2BFCCCBE0089B0E6 /* SearchUseCaseMock.swift in Sources */,
 				702413482BFCCC980089B0E6 /* SearchViewModelTests.swift in Sources */,
