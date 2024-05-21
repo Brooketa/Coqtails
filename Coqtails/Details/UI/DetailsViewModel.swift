@@ -1,6 +1,7 @@
 import SwiftUI
 
 class DetailsViewModel: ObservableObject, Loadable {
+
     @Published var state = LoadingState<DetailsCocktailModel>.idle
 
     private let detailsUseCase: DetailsUseCaseProtocol
@@ -14,7 +15,7 @@ class DetailsViewModel: ObservableObject, Loadable {
     @MainActor
     func fetchCocktailDetails(for cocktailID: String?) async {
         state = .loading
-        
+
         if let cocktailID = cocktailID {
             state = await fetchDetails(for: cocktailID)
         } else {
