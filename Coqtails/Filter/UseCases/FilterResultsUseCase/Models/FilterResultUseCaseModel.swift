@@ -5,6 +5,10 @@ struct FilterResultUseCaseModel {
     let name: String
     let ingredients: String
 
+}
+
+extension FilterResultUseCaseModel {
+
     init(from model: FilterResultClientModel) {
         self.id = model.id
         self.thumbnailURL = model.thumbnailURL
