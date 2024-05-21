@@ -2,7 +2,7 @@ import Foundation
 
 struct SearchCocktailModel: Identifiable, Hashable {
 
-    let id = UUID()
+    var id: String { remoteID }
     let highlightText: String
     let remoteID: String
     let thumbnailURL: URL?

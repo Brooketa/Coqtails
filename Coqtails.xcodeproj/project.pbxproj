@@ -99,6 +99,9 @@
 		70DB84252BF9F3360032BBB8 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DB84242BF9F3360032BBB8 /* DetailsView.swift */; };
 		70DB84272BF9F65F0032BBB8 /* UINavigationController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DB84262BF9F65F0032BBB8 /* UINavigationController+Extensions.swift */; };
 		70DB842F2BF9FA230032BBB8 /* DetailsCategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DB842E2BF9FA230032BBB8 /* DetailsCategoriesView.swift */; };
+		70F200E32BFD32F00014935B /* CombineExpectations in Frameworks */ = {isa = PBXBuildFile; productRef = 70F200E22BFD32F00014935B /* CombineExpectations */; };
+		70F200E62BFD336B0014935B /* LoadingState+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F200E52BFD336B0014935B /* LoadingState+Extensions.swift */; };
+		70F200E92BFD33FF0014935B /* SearchTestModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F200E82BFD33FF0014935B /* SearchTestModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -213,6 +216,8 @@
 		70DB84242BF9F3360032BBB8 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		70DB84262BF9F65F0032BBB8 /* UINavigationController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extensions.swift"; sourceTree = "<group>"; };
 		70DB842E2BF9FA230032BBB8 /* DetailsCategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCategoriesView.swift; sourceTree = "<group>"; };
+		70F200E52BFD336B0014935B /* LoadingState+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoadingState+Extensions.swift"; sourceTree = "<group>"; };
+		70F200E82BFD33FF0014935B /* SearchTestModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTestModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +233,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70F200E32BFD32F00014935B /* CombineExpectations in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				702413462BFCCC860089B0E6 /* MockSearchUseCase */,
+				70F200E72BFD33F00014935B /* TestModels */,
 				702413472BFCCC980089B0E6 /* SearchViewModelTests.swift */,
 			);
 			path = SearchTests;
@@ -448,6 +455,7 @@
 		70DB835C2BF8CDF50032BBB8 /* CoqtailsTests */ = {
 			isa = PBXGroup;
 			children = (
+				70F200E42BFD33550014935B /* Extensions */,
 				7024134D2BFCF9A90089B0E6 /* DetailsTests */,
 				702413452BFCCC790089B0E6 /* SearchTests */,
 			);
@@ -845,6 +853,22 @@
 			path = DetailsCategoriesView;
 			sourceTree = "<group>";
 		};
+		70F200E42BFD33550014935B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				70F200E52BFD336B0014935B /* LoadingState+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		70F200E72BFD33F00014935B /* TestModels */ = {
+			isa = PBXGroup;
+			children = (
+				70F200E82BFD33FF0014935B /* SearchTestModels.swift */,
+			);
+			path = TestModels;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -882,6 +906,9 @@
 				70DB835B2BF8CDF50032BBB8 /* PBXTargetDependency */,
 			);
 			name = CoqtailsTests;
+			packageProductDependencies = (
+				70F200E22BFD32F00014935B /* CombineExpectations */,
+			);
 			productName = CoqtailsTests;
 			productReference = 70DB83592BF8CDF50032BBB8 /* CoqtailsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -938,6 +965,7 @@
 			mainGroup = 70DB83402BF8CDF30032BBB8;
 			packageReferences = (
 				70DB83CA2BF8FD7B0032BBB8 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				70F200E12BFD32F00014935B /* XCRemoteSwiftPackageReference "CombineExpectations" */,
 			);
 			productRefGroup = 70DB834A2BF8CDF30032BBB8 /* Products */;
 			projectDirPath = "";
@@ -1072,9 +1100,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				702413502BFCF9C70089B0E6 /* DetailsUseCaseMock.swift in Sources */,
+				70F200E92BFD33FF0014935B /* SearchTestModels.swift in Sources */,
 				7024134A2BFCCCBE0089B0E6 /* SearchUseCaseMock.swift in Sources */,
 				702413482BFCCC980089B0E6 /* SearchViewModelTests.swift in Sources */,
 				702413542BFCF9F40089B0E6 /* DetailsViewModelTests.swift in Sources */,
+				70F200E62BFD336B0014935B /* LoadingState+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1406,6 +1436,14 @@
 				minimumVersion = 7.11.0;
 			};
 		};
+		70F200E12BFD32F00014935B /* XCRemoteSwiftPackageReference "CombineExpectations" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/groue/CombineExpectations";
+			requirement = {
+				kind = exactVersion;
+				version = 0.10.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1413,6 +1451,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 70DB83CA2BF8FD7B0032BBB8 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		70F200E22BFD32F00014935B /* CombineExpectations */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70F200E12BFD32F00014935B /* XCRemoteSwiftPackageReference "CombineExpectations" */;
+			productName = CombineExpectations;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
