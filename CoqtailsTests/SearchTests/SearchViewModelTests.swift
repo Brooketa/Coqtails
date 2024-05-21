@@ -6,14 +6,17 @@ import CombineExpectations
 
 final class SearchViewModelTest: XCTestCase {
 
-    let viewModel = SearchViewModel(searchUseCase: SearchUseCaseMock())
+    var viewModel: SearchViewModel!
+
+    override func setUp() {
+        viewModel = SearchViewModel(searchUseCase: SearchUseCaseMock())
+    }
 
     func testInitialLoadStateIsIdle() {
         XCTAssertEqual(viewModel.state, .idle)
     }
 
     func testSuccessEmptySearchQuery() throws {
-        viewModel.state = .idle
         XCTAssertEqual(viewModel.state, .idle)
 
         viewModel.searchText = ""
@@ -27,7 +30,6 @@ final class SearchViewModelTest: XCTestCase {
     }
 
     func testSuccessMargaritaSearchQuery() throws {
-        viewModel.state = .idle
         XCTAssertEqual(viewModel.state, .idle)
 
         viewModel.searchText = "Margarita"
@@ -41,7 +43,6 @@ final class SearchViewModelTest: XCTestCase {
     }
 
     func testSearchQueryFailed() throws {
-        viewModel.state = .idle
         XCTAssertEqual(viewModel.state, .idle)
 
         viewModel.searchText = "error"
@@ -55,7 +56,6 @@ final class SearchViewModelTest: XCTestCase {
     }
 
     func testSuccessStateSetToLoading() throws {
-        viewModel.state = .idle
         XCTAssertEqual(viewModel.state, .idle)
 
         viewModel.searchText = "loading test query"
