@@ -1,6 +1,6 @@
 import Foundation
 
-struct DetailsCocktailModel {
+struct DetailsCocktailModel: Equatable {
 
     let id: String
     let name: String
