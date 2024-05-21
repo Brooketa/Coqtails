@@ -47,7 +47,7 @@ struct FiltersView: View {
 
                 ScrollView {
                     LazyVStack(alignment: .leading, spacing: 0) {
-                        ForEach(filters) { filter in
+                        ForEach(filters, id: \.self) { filter in
                             Section {
                                 Text(filter.filterType.rawValue)
                                     .fontWeight(.bold)

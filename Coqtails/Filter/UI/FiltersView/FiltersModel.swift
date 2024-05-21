@@ -1,8 +1,7 @@
 import Foundation
 
-struct FilterModel: Identifiable, Hashable {
+struct FilterModel: Hashable {
 
-    let id = UUID()
     let filterType: FilterType
     let filterNames: [String]
 
