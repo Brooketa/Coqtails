@@ -1,7 +1,7 @@
 import Foundation
 @testable import Coqtails
 
-class MockSearchUseCase: SearchUseCaseProtocol {
+class SearchUseCaseMock: SearchUseCaseProtocol {
 
     func searchCoctails(query: String) async throws -> [Coqtails.SearchCocktailUseCaseModel] {
         switch query {
@@ -22,27 +22,27 @@ class MockSearchUseCase: SearchUseCaseProtocol {
                 id: "12864",
                 thumbnailURL: "https://www.thecocktaildb.com/images/media/drink/xrqxuv1454513218.jpg",
                 name: "Apple Cider Punch",
-                ingredients: ""),
+                ingredients: "Apple cider, Brown sugar, Lemonade, Orange juice, Cloves, Allspice, Nutmeg, Cinnamon"),
             SearchCocktailUseCaseModel(
                 id: "17222",
                 thumbnailURL: "https://www.thecocktaildb.com/images/media/drink/2x8thr1504816928.jpg",
                 name: "A1",
-                ingredients: "Pour all ingredients into a cocktail shaker, mix and serve over ice into a chilled glass."),
+                ingredients: "Gin, Grand Marnier, Lemon Juice, Grenadine"),
             SearchCocktailUseCaseModel(
                 id: "15997",
                 thumbnailURL: "https://www.thecocktaildb.com/images/media/drink/vyxwut1468875960.jpg",
                 name: "GG",
-                ingredients: "Pour the Galliano liqueur over ice."),
+                ingredients: "Galliano, Ginger ale"),
             SearchCocktailUseCaseModel(
                 id: "13501",
                 thumbnailURL: "https://www.thecocktaildb.com/images/media/drink/tqpvqp1472668328.jpg",
                 name: "ABC",
-                ingredients: ""),
+                ingredients: "Amaretto, Baileys irish cream, Cognac"),
             SearchCocktailUseCaseModel(
                 id: "17225",
                 thumbnailURL: "https://www.thecocktaildb.com/images/media/drink/l3cd7f1504818306.jpg",
                 name: "Ace",
-                ingredients: "")
+                ingredients: "Gin, Grenadine, Heavy cream, Milk, Egg White")
         ]
     }
 
