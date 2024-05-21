@@ -52,17 +52,17 @@ class SearchUseCaseMock: SearchUseCaseProtocol {
                 id: "11007",
                 thumbnailURL: "https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg",
                 name: "Margarita",
-                ingredients: "Rub the rim of the glass with the lime slice to make the salt stick to it."),
+                ingredients: "Tequila, Triple sec, Lime juice, Salt"),
             SearchCocktailUseCaseModel(
                 id: "11118",
                 thumbnailURL: "https://www.thecocktaildb.com/images/media/drink/bry4qh1582751040.jpg",
                 name: "Blue Margarita",
-                ingredients: "Rub rim of cocktail glass with lime juice. Dip rim in coarse salt."),
+                ingredients: "Tequila, Blue Curaca, Lime juice, Salt"),
             SearchCocktailUseCaseModel(
                 id: "17216",
                 thumbnailURL: "https://www.thecocktaildb.com/images/media/drink/loezxn1504373874.jpg",
                 name: "Tommy's Margarita",
-                ingredients: "Shake and strain into a chilled cocktail glass.")
+                ingredients: "Tequila, Lime Juice, Agave syrup")
         ]
     }
 

@@ -81,14 +81,14 @@ final class SearchViewModelTest: XCTestCase {
             remoteID: "11007",
             thumbnailURL: URL(string: "https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg")!,
             name: "Margarita",
-            ingredients: "Rub the rim of the glass with the lime slice to make the salt stick to it.")
+            ingredients: "Tequila, Triple sec, Lime juice, Salt")
 
         let lastModel = SearchCocktailModel(
             highlightText: searchText,
             remoteID: "17216",
             thumbnailURL: URL(string: "https://www.thecocktaildb.com/images/media/drink/loezxn1504373874.jpg")!,
             name: "Tommy's Margarita",
-            ingredients: "Shake and strain into a chilled cocktail glass.")
+            ingredients: "Tequila, Lime Juice, Agave syrup")
 
         viewModel
             .$state
