@@ -51,6 +51,7 @@ struct FiltersView: View {
                             Section {
                                 Text(filter.filterType.rawValue)
                                     .fontWeight(.bold)
+                                    .foregroundStyle(.black)
                                     .padding(.vertical, 8)
                                     .padding(.horizontal, 20)
 

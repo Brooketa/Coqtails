@@ -29,8 +29,8 @@ struct CocktailListItemView: View {
                 }
 
                 Text(ingredients)
-                    .foregroundStyle(.secondary)
                     .font(.caption)
+                    .foregroundStyle(Color(uiColor: .systemGray))
                     .lineLimit(1)
                     .truncationMode(.tail)
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -47,6 +47,7 @@ struct CocktailListItemView: View {
         Text(name)
             .font(.subheadline)
             .fontWeight(.bold)
+            .foregroundStyle(.black)
             .frame(alignment: .leading)
     }
 
@@ -54,6 +55,7 @@ struct CocktailListItemView: View {
         Text(attributedCocktailName)
             .font(.subheadline)
             .fontWeight(.light)
+            .foregroundStyle(.black)
             .frame(alignment: .leading)
     }
 

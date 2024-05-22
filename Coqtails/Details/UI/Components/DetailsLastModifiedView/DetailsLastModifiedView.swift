@@ -14,6 +14,7 @@ struct DetailsLastModifiedView: View {
 
             Text("\(lastModified.timeAgo())")
                 .font(.system(size: 16))
+                .foregroundStyle(.black)
         }
         .padding(.horizontal, 20)
         .padding(.bottom, 20)
