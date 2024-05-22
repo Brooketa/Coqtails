@@ -4,9 +4,14 @@ struct FilterResultsView: View {
 
     @EnvironmentObject private var navigationPathManager: NavigationPathManager
 
-    @StateObject var viewModel = FilterResultsViewModel(filterResultsUseCase: FilterResultsUseCase(filterResultsClient: FilterResultsClient(baseClient: BaseClient())))
+    @StateObject private var viewModel: FilterResultsViewModel
 
-    let selectedFilters: [SelectedFilter]
+    private let selectedFilters: [SelectedFilter]
+
+    init(viewModel: FilterResultsViewModel, selectedFilters: [SelectedFilter]) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+        self.selectedFilters = selectedFilters
+    }
 
     var body: some View {
         VStack(spacing: 0) {
@@ -73,8 +78,4 @@ extension CocktailListItemView {
         self.highlightText = ""
     }
 
-}
-
-#Preview {
-    FilterResultsView(selectedFilters: [])
 }
