@@ -263,6 +263,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		70105B7C2BFDDDF300D45CBE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				70DB83F12BF909650032BBB8 /* FiltersModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		702413452BFCCC790089B0E6 /* SearchTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -515,7 +523,6 @@
 				705AB2102BFA405F0039B642 /* Date+Extensions.swift */,
 				70DB841C2BF964C10032BBB8 /* DateFormatter+Extensions.swift */,
 				70DB83802BF8D2C30032BBB8 /* JSONDecoder+Extensions.swift */,
-				70DB84262BF9F65F0032BBB8 /* UINavigationController+Extensions.swift */,
 				7027CA502BFB9E4F00B27AD0 /* Sequence+Extensions.swift */,
 			);
 			path = Extensions;
@@ -683,6 +690,7 @@
 			isa = PBXGroup;
 			children = (
 				70DB83C82BF8FD340032BBB8 /* Color+Extensions.swift */,
+				70DB84262BF9F65F0032BBB8 /* UINavigationController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -762,9 +770,9 @@
 			isa = PBXGroup;
 			children = (
 				70DB83F92BF915D70032BBB8 /* Components */,
+				70105B7C2BFDDDF300D45CBE /* Models */,
 				70DB83F72BF9158F0032BBB8 /* FiltersView.swift */,
 				70DB83EF2BF909070032BBB8 /* FiltersViewModel.swift */,
-				70DB83F12BF909650032BBB8 /* FiltersModel.swift */,
 			);
 			path = FiltersView;
 			sourceTree = "<group>";

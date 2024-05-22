@@ -31,3 +31,9 @@ protocol Loadable: ObservableObject {
     func load()
 
 }
+
+extension Loadable {
+
+    func load() {}
+
+}

@@ -26,7 +26,7 @@ class BaseClient: BaseClientProtocol {
 
     private func buildRequest(path: String, method: HTTPMethod, parameters: [String: String]) -> URLRequest? {
         guard let url = buildURL(path: path, parameters: parameters) else { return nil }
-        print(url)
+
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
         request.setValue("application/json", forHTTPHeaderField: "content-type")

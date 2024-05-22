@@ -10,8 +10,6 @@ class FilterResultsViewModel: ObservableObject, Loadable {
         self.filterResultsUseCase = filterResultsUseCase
     }
 
-    func load() {}
-
     @MainActor
     func fetchFilteredCocktails(for selectedFilters: [SelectedFilter]) async {
         do {

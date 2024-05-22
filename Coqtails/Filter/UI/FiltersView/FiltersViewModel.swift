@@ -18,8 +18,6 @@ class FiltersViewModel: ObservableObject, Loadable {
         configureSubscriptions()
     }
 
-    func load() {}
-
     @MainActor
     func fetchAllFilters() async {
         do {
