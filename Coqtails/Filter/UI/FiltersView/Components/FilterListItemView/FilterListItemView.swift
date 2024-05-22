@@ -14,6 +14,7 @@ struct FilterListItemView: View {
 
             Text(filterName)
                 .font(.system(size: 15))
+                .foregroundStyle(.black)
 
             Spacer()
         }

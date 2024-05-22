@@ -16,6 +16,7 @@ struct CategoryView: View {
 
             Text(title)
                 .font(.caption)
+                .foregroundStyle(.black)
         }
         .frame(maxWidth: .infinity)
     }
