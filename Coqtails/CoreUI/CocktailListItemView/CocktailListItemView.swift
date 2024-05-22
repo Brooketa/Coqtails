@@ -47,14 +47,14 @@ struct CocktailListItemView: View {
         Text(name)
             .font(.subheadline)
             .fontWeight(.bold)
-            .frame(maxWidth: .infinity, alignment: .leading)
+            .frame(alignment: .leading)
     }
 
     private var highlightedCocktailName: some View {
         Text(attributedCocktailName)
             .font(.subheadline)
             .fontWeight(.light)
-            .frame(maxWidth: .infinity, alignment: .leading)
+            .frame(alignment: .leading)
     }
 
     private var attributedCocktailName: AttributedString {

@@ -10,8 +10,6 @@ class DetailsViewModel: ObservableObject, Loadable {
         self.detailsUseCase = detailsUseCase
     }
 
-    func load() {}
-
     @MainActor
     func fetchCocktailDetails(for cocktailID: String?) async {
         state = .loading

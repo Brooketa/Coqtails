@@ -39,7 +39,7 @@ struct DetailsView: View {
                 .background(Color.primaryAccentColor)
                 .overlay(alignment: .center) {
 
-                    Text(cocktail.name ?? "")
+                    Text(cocktail.name)
                         .font(.system(size: 17))
                         .fontWeight(.semibold)
                         .foregroundStyle(.white)

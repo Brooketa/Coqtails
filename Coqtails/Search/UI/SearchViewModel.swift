@@ -17,8 +17,6 @@ class SearchViewModel: ObservableObject, Loadable {
         configureSubscriptions()
     }
 
-    func load() {}
-
     private func searchCocktails(query: String) async -> LoadingState<[SearchCocktailModel]> {
             do {
                 let cocktails = try await searchUseCase
