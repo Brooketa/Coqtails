@@ -6,7 +6,7 @@ class SearchClient: SearchClientProtocol {
         self.baseClient = baseClient
     }
 
-    func searchCoctails(query: String) async throws -> [SearchCocktailClientModel] {
+    func searchCocktails(query: String) async throws -> [SearchCocktailClientModel] {
         let endpoint = SearchEndpoint.search(query)
 
         let response: SearchCocktailResponseModel = try await baseClient.execute(

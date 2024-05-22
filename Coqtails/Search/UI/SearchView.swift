@@ -36,7 +36,7 @@ struct SearchView: View {
                                     .onTapGesture {
                                         navigationPathManager
                                             .navigationPath
-                                            .append(SearchNavigationDestination.details(cocktail.remoteID))
+                                            .append(SearchNavigationDestination.details(cocktail.cocktailID))
                                     }
                             }
                         }

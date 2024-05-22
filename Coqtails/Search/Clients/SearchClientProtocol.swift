@@ -1,5 +1,5 @@
 protocol SearchClientProtocol {
 
-    func searchCoctails(query: String) async throws -> [SearchCocktailClientModel]
+    func searchCocktails(query: String) async throws -> [SearchCocktailClientModel]
 
 }

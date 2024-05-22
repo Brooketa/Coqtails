@@ -3,7 +3,7 @@ import Foundation
 
 class SearchUseCaseMock: SearchUseCaseProtocol {
 
-    func searchCoctails(query: String) async throws -> [Coqtails.SearchCocktailUseCaseModel] {
+    func searchCocktails(query: String) async throws -> [Coqtails.SearchCocktailUseCaseModel] {
         switch query {
         case "":
             return emptyQuerySearchCocktailUseCaseModels
