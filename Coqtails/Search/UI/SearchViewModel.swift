@@ -19,13 +19,13 @@ class SearchViewModel: ObservableObject, Loadable {
 
     func load() {}
 
-    private func searchCoctails(query: String) async -> LoadingState<[SearchCocktailModel]> {
+    private func searchCocktails(query: String) async -> LoadingState<[SearchCocktailModel]> {
             do {
-                let coctails = try await searchUseCase
-                    .searchCoctails(query: query)
+                let cocktails = try await searchUseCase
+                    .searchCocktails(query: query)
                     .map { SearchCocktailModel(for: searchText, from: $0) }
 
-                return .loaded(coctails)
+                return .loaded(cocktails)
             } catch {
                 return .failed(error)
             }
@@ -40,7 +40,7 @@ class SearchViewModel: ObservableObject, Loadable {
                 self.state = .loading
 
                 Task(priority: .userInitiated) {
-                    let state = await self.searchCoctails(query: query)
+                    let state = await self.searchCocktails(query: query)
 
                     await MainActor.run {
                         self.state = state

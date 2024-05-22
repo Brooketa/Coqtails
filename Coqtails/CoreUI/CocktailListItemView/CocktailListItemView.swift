@@ -25,7 +25,7 @@ struct CocktailListItemView: View {
                 if highlightText.isEmpty {
                     regularCocktailName
                 } else {
-                    highlightedCoctailName
+                    highlightedCocktailName
                 }
 
                 Text(ingredients)
@@ -50,7 +50,7 @@ struct CocktailListItemView: View {
             .frame(maxWidth: .infinity, alignment: .leading)
     }
 
-    private var highlightedCoctailName: some View {
+    private var highlightedCocktailName: some View {
         Text(attributedCocktailName)
             .font(.subheadline)
             .fontWeight(.light)

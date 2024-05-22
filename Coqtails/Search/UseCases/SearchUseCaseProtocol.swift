@@ -1,5 +1,5 @@
 protocol SearchUseCaseProtocol {
 
-    func searchCoctails(query: String) async throws -> [SearchCocktailUseCaseModel]
+    func searchCocktails(query: String) async throws -> [SearchCocktailUseCaseModel]
 
 }
