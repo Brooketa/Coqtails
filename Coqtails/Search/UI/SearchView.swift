@@ -4,9 +4,9 @@ struct SearchView: View {
 
     @Environment(\.dependencies) var dependencies
 
-    @StateObject private var viewModel: SearchViewModel
-
     @StateObject var navigationPathManager = NavigationPathManager()
+
+    @StateObject private var viewModel: SearchViewModel
 
     @State private var shouldFocusSearchTextField: Bool = false
 

@@ -3,7 +3,7 @@ import Kingfisher
 
 struct CocktailListItemView: View {
 
-    let highlightText: String
+    var highlightText: String = ""
     let thumbnailURL: URL?
     let name: String
     let ingredients: String

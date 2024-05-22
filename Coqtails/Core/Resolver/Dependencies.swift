@@ -18,7 +18,7 @@ struct Dependencies {
 
     var setupFiltersViewModel: FiltersViewModel {
         let filtersClient = FiltersClient(baseClient: BaseClient())
-        let filtersUseCase = FiltersUseCase(filterClient: filtersClient)
+        let filtersUseCase = FiltersUseCase(filtersClient: filtersClient)
 
         return FiltersViewModel(filterUseCase: filtersUseCase)
     }
