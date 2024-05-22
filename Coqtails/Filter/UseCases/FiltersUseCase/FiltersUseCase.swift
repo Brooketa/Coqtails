@@ -1,25 +1,25 @@
 class FiltersUseCase: FiltersUseCaseProtocol {
 
-    private let filterClient: FiltersClientProtocol
+    private let filtersClient: FiltersClientProtocol
 
-    init(filterClient: FiltersClientProtocol) {
-        self.filterClient = filterClient
+    init(filtersClient: FiltersClientProtocol) {
+        self.filtersClient = filtersClient
     }
 
     func fetchCategoryTypes() async throws -> [FilterCategoryTypeUseCaseModel] {
-        try await filterClient
+        try await filtersClient
             .fetchCategoryTypes()
             .map { FilterCategoryTypeUseCaseModel(from: $0) }
     }
 
     func fetchGlassTypes() async throws -> [FilterGlassTypeUseCaseModel] {
-        try await filterClient
+        try await filtersClient
             .fetchGlassTypes()
             .map { FilterGlassTypeUseCaseModel(from: $0) }
     }
 
     func fetchAlcoholicTypes() async throws -> [FilterAlcoholicTypeUseCaseModel] {
-        try await filterClient
+        try await filtersClient
             .fetchAlcoholicTypes()
             .map { FilterAlcoholicTypeUseCaseModel(from: $0) }
     }
