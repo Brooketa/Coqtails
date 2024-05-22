@@ -1,5 +1,6 @@
 import XCTest
 import CombineExpectations
+
 @testable import Coqtails
 
 final class FiltersViewModelTests: XCTestCase {
@@ -26,16 +27,16 @@ final class FiltersViewModelTests: XCTestCase {
 
         let state = viewModel.state
 
-        XCTAssertEqual(state.items, FiltersTestModels.allFilterModels)
+        XCTAssertEqual(state.items, FilterTestModels.allFilterModels)
     }
 
     func testSuccessAddSelectedFilters() throws {
         XCTAssertEqual(viewModel.state, .idle)
 
         Task {
-            await viewModel.filterTapped(FiltersTestModels.categorySelectedFilter)
-            await viewModel.filterTapped(FiltersTestModels.glassSelectedFilter)
-            await viewModel.filterTapped(FiltersTestModels.alcoholicSelectedFilter)
+            await viewModel.filterTapped(FilterTestModels.categorySelectedFilter)
+            await viewModel.filterTapped(FilterTestModels.glassSelectedFilter)
+            await viewModel.filterTapped(FilterTestModels.alcoholicSelectedFilter)
         }
 
         let recorder = viewModel.$selectedFilters.record()
@@ -43,20 +44,20 @@ final class FiltersViewModelTests: XCTestCase {
 
         let selectedFilters = viewModel.selectedFilters
 
-        XCTAssertEqual(selectedFilters, FiltersTestModels.allSelectedFilters)
+        XCTAssertEqual(selectedFilters, FilterTestModels.allSelectedFilters)
     }
 
     func testSuccessAddAndRemoveSelectedFilters() throws {
         XCTAssertEqual(viewModel.state, .idle)
 
         Task {
-            await viewModel.filterTapped(FiltersTestModels.categorySelectedFilter)
-            await viewModel.filterTapped(FiltersTestModels.glassSelectedFilter)
-            await viewModel.filterTapped(FiltersTestModels.alcoholicSelectedFilter)
+            await viewModel.filterTapped(FilterTestModels.categorySelectedFilter)
+            await viewModel.filterTapped(FilterTestModels.glassSelectedFilter)
+            await viewModel.filterTapped(FilterTestModels.alcoholicSelectedFilter)
 
-            await viewModel.filterTapped(FiltersTestModels.categorySelectedFilter)
-            await viewModel.filterTapped(FiltersTestModels.glassSelectedFilter)
-            await viewModel.filterTapped(FiltersTestModels.alcoholicSelectedFilter)
+            await viewModel.filterTapped(FilterTestModels.categorySelectedFilter)
+            await viewModel.filterTapped(FilterTestModels.glassSelectedFilter)
+            await viewModel.filterTapped(FilterTestModels.alcoholicSelectedFilter)
         }
 
         let recorder = viewModel.$selectedFilters.record()
@@ -71,7 +72,7 @@ final class FiltersViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.state, .idle)
 
         Task {
-            await viewModel.filterTapped(FiltersTestModels.categorySelectedFilter)
+            await viewModel.filterTapped(FilterTestModels.categorySelectedFilter)
         }
 
         let recorder = viewModel.$resetButtonIsEnabled.filter { $0 == true } .record()
@@ -86,7 +87,7 @@ final class FiltersViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.state, .idle)
 
         Task {
-            await viewModel.filterTapped(FiltersTestModels.categorySelectedFilter)
+            await viewModel.filterTapped(FilterTestModels.categorySelectedFilter)
         }
 
         let recorder = viewModel.$searchButtonIsEnabled.filter { $0 == true } .record()
@@ -96,12 +97,12 @@ final class FiltersViewModelTests: XCTestCase {
         XCTAssertTrue(isSearchButtonEnabled)
     }
 
-    func testResetButtonIsEnabledFailed() throws {
+    func testSuccessResetButtonIsDisabled() throws {
         XCTAssertEqual(viewModel.state, .idle)
 
         Task {
-            await viewModel.filterTapped(FiltersTestModels.categorySelectedFilter)
-            await viewModel.filterTapped(FiltersTestModels.categorySelectedFilter)
+            await viewModel.filterTapped(FilterTestModels.categorySelectedFilter)
+            await viewModel.filterTapped(FilterTestModels.categorySelectedFilter)
         }
 
         let recorder = viewModel.$resetButtonIsEnabled.filter { $0 == false } .record()
@@ -112,12 +113,12 @@ final class FiltersViewModelTests: XCTestCase {
         XCTAssertFalse(isResetButtonEnabled)
     }
 
-    func testSearchButtonIsEnabledFailed() throws {
+    func testSuccessSearchButtonIsDisabled() throws {
         XCTAssertEqual(viewModel.state, .idle)
 
         Task {
-            await viewModel.filterTapped(FiltersTestModels.categorySelectedFilter)
-            await viewModel.filterTapped(FiltersTestModels.categorySelectedFilter)
+            await viewModel.filterTapped(FilterTestModels.categorySelectedFilter)
+            await viewModel.filterTapped(FilterTestModels.categorySelectedFilter)
         }
 
         let recorder = viewModel.$resetButtonIsEnabled.filter { $0 == false } .record()

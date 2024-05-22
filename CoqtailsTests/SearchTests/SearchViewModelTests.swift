@@ -21,7 +21,7 @@ final class SearchViewModelTest: XCTestCase {
         viewModel.searchText = ""
 
         let recorder = viewModel.$state.map(\.items).filter { $0 != nil }.record()
-        _ = try wait(for: recorder.next(), timeout: 2)
+        try wait(for: recorder.next())
 
         let state = viewModel.state
 
@@ -34,7 +34,7 @@ final class SearchViewModelTest: XCTestCase {
         viewModel.searchText = "Margarita"
 
         let recorder = viewModel.$state.map(\.items).filter { $0 != nil }.record()
-        _ = try wait(for: recorder.next(), timeout: 2)
+        try wait(for: recorder.next())
 
         let state = viewModel.state
 
@@ -47,11 +47,11 @@ final class SearchViewModelTest: XCTestCase {
         viewModel.searchText = "error"
 
         let recorder = viewModel.$state.map(\.error).filter { $0 != nil }.record()
-        _ = try wait(for: recorder.next(), timeout: 2)
+        try wait(for: recorder.next())
 
         let state = viewModel.state
 
-        XCTAssertEqual(state, .failed(APIError.genericError("Unable to fetch data")))
+        XCTAssertEqual(state, .failed(TestError.genericError("Unable to fetch data")))
     }
 
     func testSuccessStateSetToLoading() throws {
@@ -60,7 +60,7 @@ final class SearchViewModelTest: XCTestCase {
         viewModel.searchText = "loading test query"
 
         let recorder = viewModel.$state.dropFirst().record()
-        _ = try wait(for: recorder.next(), timeout: 2)
+        try wait(for: recorder.next())
 
         let state = viewModel.state
 

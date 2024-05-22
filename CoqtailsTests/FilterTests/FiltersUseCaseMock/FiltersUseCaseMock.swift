@@ -3,30 +3,30 @@
 class FiltersUseCaseMock: FiltersUseCaseProtocol {
 
     func fetchCategoryTypes() async throws -> [Coqtails.FilterCategoryTypeUseCaseModel] {
-        categoryTypeModels
+        categoryTypeUseCaseModels
     }
 
     func fetchGlassTypes() async throws -> [Coqtails.FilterGlassTypeUseCaseModel] {
-        glassTypeModels
+        glassTypeUseCaseModels
     }
 
     func fetchAlcoholicTypes() async throws -> [Coqtails.FilterAlcoholicTypeUseCaseModel] {
-        alcoholicTypeModels
+        alcoholicTypeUseCaseModels
     }
 
-    private var categoryTypeModels = [
+    private let categoryTypeUseCaseModels = [
         FilterCategoryTypeUseCaseModel(filterName: "Ordinary Drink"),
         FilterCategoryTypeUseCaseModel(filterName: "Cocktail"),
         FilterCategoryTypeUseCaseModel(filterName: "Shake")
     ]
 
-    private var glassTypeModels = [
+    private let glassTypeUseCaseModels = [
         FilterGlassTypeUseCaseModel(filterName: "Highball glass"),
         FilterGlassTypeUseCaseModel(filterName: "Cocktail glass"),
         FilterGlassTypeUseCaseModel(filterName: "Old-fashioned glass")
     ]
 
-    private var alcoholicTypeModels = [
+    private let alcoholicTypeUseCaseModels = [
         FilterAlcoholicTypeUseCaseModel(filterName: "Alcoholic"),
         FilterAlcoholicTypeUseCaseModel(filterName: "Non alhocolic"),
         FilterAlcoholicTypeUseCaseModel(filterName: "Optional alcoholic")

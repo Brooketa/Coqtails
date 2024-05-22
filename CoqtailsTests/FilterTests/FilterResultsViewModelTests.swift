@@ -19,7 +19,7 @@ final class FilterResultsViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.state, .idle)
 
         Task {
-            await viewModel.fetchFilteredCocktails(for: FiltersTestModels.allSelectedFilters)
+            await viewModel.fetchFilteredCocktails(for: FilterTestModels.allSelectedFilters)
         }
 
         let recorder = viewModel.$state.map(\.items).filter { $0 != nil }.record()
@@ -27,7 +27,7 @@ final class FilterResultsViewModelTests: XCTestCase {
 
         let state = viewModel.state
 
-        XCTAssertEqual(state.items, FiltersTestModels.allFilterResultCocktailModels)
+        XCTAssertEqual(state.items, FilterTestModels.allFilterResultCocktailModels)
     }
 
     func testFetchFilteredCocktailsFailed() throws {
@@ -42,14 +42,14 @@ final class FilterResultsViewModelTests: XCTestCase {
 
         let state = viewModel.state
 
-        XCTAssertEqual(state, .failed(APIError.genericError("Unable to fetch data")))
+        XCTAssertEqual(state, .failed(TestError.genericError("Unable to fetch data")))
     }
 
     func testSuccessStateSetToLoading() throws {
         XCTAssertEqual(viewModel.state, .idle)
 
         Task {
-            await viewModel.fetchFilteredCocktails(for: FiltersTestModels.allSelectedFilters)
+            await viewModel.fetchFilteredCocktails(for: FilterTestModels.allSelectedFilters)
         }
 
         let recorder = viewModel.$state.dropFirst().record()

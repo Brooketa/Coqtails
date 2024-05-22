@@ -1,7 +1,7 @@
 import Foundation
 @testable import Coqtails
 
-struct FiltersTestModels {
+struct FilterTestModels {
 
     static let allFilterModels = [
         FilterModel(filterType: .category, filterNames: ["Ordinary Drink", "Cocktail", "Shake"]),
@@ -14,9 +14,9 @@ struct FiltersTestModels {
     static let alcoholicSelectedFilter = SelectedFilter(filterType: .alcoholic, filterName: "Alcoholic")
 
     static let allSelectedFilters = [
-        FiltersTestModels.categorySelectedFilter,
-        FiltersTestModels.glassSelectedFilter,
-        FiltersTestModels.alcoholicSelectedFilter
+        FilterTestModels.categorySelectedFilter,
+        FilterTestModels.glassSelectedFilter,
+        FilterTestModels.alcoholicSelectedFilter
     ]
 
     static let allFilterResultCocktailModels = [
