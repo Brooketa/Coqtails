@@ -16,6 +16,7 @@ struct SearchBarView: View {
 
             TextField("", text: $searchText)
                 .font(.system(size: 15))
+                .foregroundStyle(.black)
                 .autocorrectionDisabled()
                 .focused($isFocused)
                 .tint(.black)

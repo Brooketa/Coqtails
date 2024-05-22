@@ -4,7 +4,13 @@ struct FiltersView: View {
 
     @EnvironmentObject private var navigationPathManager: NavigationPathManager
 
-    @StateObject private var viewModel = FiltersViewModel(filterUseCase: FiltersUseCase(filterClient: FiltersClient(baseClient: BaseClient())))
+    @Environment(\.dependencies) var dependencies
+
+    @StateObject private var viewModel: FiltersViewModel
+
+    init(viewModel: FiltersViewModel) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
 
     var body: some View {
         VStack(spacing: 0) {
@@ -87,10 +93,10 @@ struct FiltersView: View {
         .navigationDestination(for: FilterNavigationDestination.self) { destination in
             switch destination {
             case .details(let cocktailID):
-                DetailsView(cocktailID: cocktailID)
+                DetailsView(viewModel: dependencies.setupDetailsViewModel, cocktailID: cocktailID)
                     .environmentObject(navigationPathManager)
             case .filterResults(let selectedFilters):
-                FilterResultsView(selectedFilters: selectedFilters)
+                FilterResultsView(viewModel: dependencies.setupFilterResultsViewModel, selectedFilters: selectedFilters)
                     .environmentObject(navigationPathManager)
             }
         }

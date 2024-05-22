@@ -2,10 +2,17 @@ import SwiftUI
 
 struct SearchView: View {
 
-    @StateObject var viewModel = SearchViewModel(searchUseCase: SearchUseCase(searchClient: SearchClient(baseClient: BaseClient())))
+    @Environment(\.dependencies) var dependencies
+
+    @StateObject private var viewModel: SearchViewModel
+
     @StateObject var navigationPathManager = NavigationPathManager()
 
     @State private var shouldFocusSearchTextField: Bool = false
+
+    init(viewModel: SearchViewModel) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
 
     var body: some View {
         NavigationStack(path: $navigationPathManager.navigationPath) {
@@ -54,10 +61,10 @@ struct SearchView: View {
             .navigationDestination(for: SearchNavigationDestination.self) { destination in
                 switch destination {
                 case .details(let cocktailID):
-                    DetailsView(cocktailID: cocktailID)
+                    DetailsView(viewModel: dependencies.setupDetailsViewModel, cocktailID: cocktailID)
                         .environmentObject(navigationPathManager)
                 case .filters:
-                    FiltersView()
+                    FiltersView(viewModel: dependencies.setupFiltersViewModel)
                         .environmentObject(navigationPathManager)
                 }
             }
@@ -104,8 +111,4 @@ extension CocktailListItemView {
         self.ingredients = model.ingredients
     }
 
-}
-
-#Preview {
-    SearchView()
 }

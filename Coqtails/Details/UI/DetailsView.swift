@@ -7,13 +7,14 @@ struct DetailsView: View {
 
     @EnvironmentObject private var navigationPathManager: NavigationPathManager
 
-    @StateObject private var viewModel = DetailsViewModel(detailsUseCase: DetailsUseCase(detailsClient: DetailsClient(baseClient: BaseClient())))
+    @StateObject private var viewModel: DetailsViewModel
 
     @State private var scrollViewSize: CGSize = .zero
 
     let cocktailID: String?
 
-    init(cocktailID: String?) {
+    init(viewModel: DetailsViewModel, cocktailID: String?) {
+        _viewModel = StateObject(wrappedValue: viewModel)
         self.cocktailID = cocktailID
     }
 
