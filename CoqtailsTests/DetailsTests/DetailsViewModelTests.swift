@@ -24,7 +24,7 @@ final class DetailsViewModelTests: XCTestCase {
         }
 
         let recorder = viewModel.$state.map(\.items).filter { $0 != nil }.record()
-        _ = try wait(for: recorder.next(), timeout: 2)
+        try wait(for: recorder.next())
 
         let state = viewModel.state
 
@@ -39,7 +39,7 @@ final class DetailsViewModelTests: XCTestCase {
         }
 
         let recorder = viewModel.$state.map(\.items).filter { $0 != nil }.record()
-        _ = try wait(for: recorder.next(), timeout: 2)
+        try wait(for: recorder.next())
 
         let state = viewModel.state
 
@@ -54,11 +54,11 @@ final class DetailsViewModelTests: XCTestCase {
         }
 
         let recorder = viewModel.$state.map(\.error).filter { $0 != nil }.record()
-        _ = try wait(for: recorder.next(), timeout: 2)
+        try wait(for: recorder.next())
 
         let state = viewModel.state
 
-        XCTAssertEqual(state, .failed(APIError.genericError("Unable to fetch data")))
+        XCTAssertEqual(state, .failed(TestError.genericError("Unable to fetch data")))
     }
 
     func testSuccessStateSetToLoading() throws {
@@ -69,7 +69,7 @@ final class DetailsViewModelTests: XCTestCase {
         }
 
         let recorder = viewModel.$state.dropFirst().record()
-        _ = try wait(for: recorder.next(), timeout: 2)
+        try wait(for: recorder.next())
 
         let state = viewModel.state
 

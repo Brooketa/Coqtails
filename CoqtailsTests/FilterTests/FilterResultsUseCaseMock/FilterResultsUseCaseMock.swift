@@ -5,7 +5,7 @@ class FilterResultsUseCaseMock: FilterResultsUseCaseProtocol {
     func fetchFilteredCocktails(
         for selectedFilters: [Coqtails.SelectedFilter]
     ) async throws -> [Coqtails.FilterResultUseCaseModel] {
-        guard !selectedFilters.isEmpty else { throw APIError.genericError("Unable to fetch data") }
+        guard !selectedFilters.isEmpty else { throw TestError.genericError("Unable to fetch data") }
 
         return filterResultUseCaseModels
     }

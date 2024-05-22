@@ -5,7 +5,7 @@ class DetailsUseCaseMock: DetailsUseCaseProtocol {
 
     func fetchCocktailDetails(for cocktailID: String) async throws -> Coqtails.DetailsCocktailUseCaseModel {
         if cocktailID == "11118" {
-            throw APIError.genericError("Unable to fetch data")
+            throw TestError.genericError("Unable to fetch data")
         }
 
         return DetailsCocktailUseCaseModel(
