@@ -8,7 +8,6 @@ class SearchViewModel: ObservableObject, Loadable {
 
     private let searchUseCase: SearchUseCaseProtocol
 
-    private var isInitialLoad: Bool = true
     private var cancellables = Set<AnyCancellable>()
     
     init(searchUseCase: SearchUseCaseProtocol) {
